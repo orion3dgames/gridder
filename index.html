@@ -7,9 +7,41 @@ and open the template in the editor.
 	<head>
 		<title></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link href="css/gridder.css" rel="stylesheet">
 	</head>
 	<body>
 		<h1>Gridder</h1>
 		<p>I'm creating this jQuery plugin as i was unable to find a similar one on internet.</p>
+		
+		<div class="gridder">
+			<div class="gridder-list">
+				
+				<div class="thumb">
+					<span class="overlay">Title 1</span>
+				</div>
+
+				<div class="superbox-content">
+					<h2>Your bobby dangler</h2>
+					<p>
+						When I get back, remind to tell you about the time I took 100 nuns to Nairobi! 
+						Your were only supposed to blow the bloody doors off. Your were only supposed to 
+						blow the bloody doors off. Pull my finger! You know, your bobby dangler, giggle 
+						stick, your general-two-colonels, master of ceremonies...
+					</p>
+				</div>
+				
+			</div>
+		</div>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/gridder.js"></script>
+		<script>
+		$(function() {
+		
+			// Call Gridder
+			$('.gridder').Gridder();
+		
+		});
+		</script>
 	</body>
 </html>

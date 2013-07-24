@@ -1,12 +1,167 @@
-/* 
-    Document   : gridder
-    Created on : 24/07/2013, 6:14:20 PM
-    Author     : USER
-    Description:
-        Purpose of the stylesheet follows.
-*/
-
-root { 
-	display: block;
+/* line 1, gridder.scss */
+.gridder-list {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  width: 170px;
+  height: 200px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+/* line 10, gridder.scss */
+.gridder-list .thumb {
+  display: inline-block;
+  position: relative;
+}
+/* line 13, gridder.scss */
+.gridder-list .thumb .overlay {
+  position: absolute;
+  color: #FFF;
+  z-index: 1;
+  text-align: center;
+  left: 0px;
+  bottom: 0px;
+  font-weight: normal;
+  display: block;
+  background: #000000;
+  width: 160px;
+  padding: 10px 0;
+  font-weight: 16px;
+}
+/* line 27, gridder.scss */
+.gridder-list .thumb .overlay span {
+  font-weight: 11px;
+  display: block;
+}
+/* line 34, gridder.scss */
+.gridder-list img {
+  width: 160px;
 }
 
+/* line 37, gridder.scss */
+.gridder-list.imactive .overlay {
+  background: #b2083c;
+}
+
+/* line 42, gridder.scss */
+.gridder-content {
+  display: none;
+}
+
+/* line 46, gridder.scss */
+.gridder-img {
+  width: 100%;
+  cursor: pointer;
+}
+
+/* line 51, gridder.scss */
+.gridder-show {
+  text-align: center;
+  position: relative;
+  background: #f3f3f3;
+  float: left;
+  padding: 0px;
+  display: none;
+  margin-bottom: 11px;
+  color: #000;
+  min-height: 250px;
+  overflow: hidden;
+}
+/* line 63, gridder.scss */
+.gridder-show .content {
+  text-align: left;
+  padding: 25px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+/* line 69, gridder.scss */
+.gridder-show .content img {
+  width: 160px;
+  float: left;
+  margin-right: 20px;
+}
+/* line 75, gridder.scss */
+.gridder-show .content h3 {
+  font-weight: normal;
+  color: #b2083c;
+  font-size: 18px;
+  margin: 0px;
+}
+/* line 81, gridder.scss */
+.gridder-show .content h4 {
+  font-weight: normal;
+  font-style: italic;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+/* line 88, gridder.scss */
+.gridder-show .content p {
+  margin: 0px;
+}
+/* line 90, gridder.scss */
+.gridder-show .content a {
+  cursor: pointer;
+}
+
+/* line 93, gridder.scss */
+.gridder-current-img {
+  max-width: 100%;
+  box-shadow: 0 1px 4px #222;
+  border: 1px solid #222;
+}
+
+/* line 98, gridder.scss */
+.gridder-img:hover {
+  opacity: 0.8;
+}
+
+/* line 101, gridder.scss */
+.gridder-float {
+  float: left;
+}
+
+/* line 104, gridder.scss */
+.gridder-close {
+  opacity: 0.7;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: url("../images/close.png") no-repeat center center;
+  width: 13px;
+  height: 13px;
+}
+
+/* line 114, gridder.scss */
+.gridder-close:hover {
+  opacity: 1;
+}
+
+/* line 118, gridder.scss */
+.gridder-prev {
+  opacity: 0.7;
+  cursor: pointer;
+  position: absolute;
+  top: 75px;
+  left: 25px;
+  background: url("../images/prev.jpg") no-repeat center center;
+  width: 40px;
+  height: 99px;
+}
+
+/* line 128, gridder.scss */
+.gridder-next {
+  opacity: 0.7;
+  cursor: pointer;
+  position: absolute;
+  top: 75px;
+  right: 25px;
+  background: url("../images/next.jpg") no-repeat center center;
+  width: 40px;
+  height: 99px;
+}
+
+/* line 139, gridder.scss */
+.gridder-prev:hover {
+  opacity: 1;
+}

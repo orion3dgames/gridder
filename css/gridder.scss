@@ -1,0 +1,141 @@
+.gridder-list {
+	display:inline-block;
+	*display:inline;
+	zoom:1;
+	width:170px;
+	height:200px;
+	margin-bottom: 10px;
+	cursor:pointer;
+	
+	.thumb{
+		display:inline-block;
+		position:relative;
+		.overlay{
+			position:absolute;
+			color:#FFF;
+			z-index:1;
+			text-align:center;
+			left:0px;
+			bottom:0px;
+			font-weight:normal;
+			display:block;
+			background: #000000;
+			width:160px;
+			padding:10px 0;
+			font-weight: 16px;
+			
+			span{
+				font-weight: 11px;
+				display:block;
+			}
+		}
+	}
+	
+	img{width:160px;}
+}
+.gridder-list.imactive{
+	.overlay{
+		background: #b2083c;
+	}
+}
+
+.gridder-content{
+	display:none;
+}
+
+.gridder-img {
+	width:100%;
+	cursor:pointer;
+}
+
+.gridder-show {
+	text-align:center;
+	position:relative;
+	background:#f3f3f3;
+	float:left;
+	padding:0px;
+	display:none;
+	margin-bottom: 11px;
+	color:#000;
+	min-height:250px;
+	overflow:hidden;
+	
+	.content{
+		text-align:left;
+		padding:25px;
+		padding-left:100px;
+		padding-right:100px;
+		
+		img{
+			width:160px;
+			float:left;
+			margin-right: 20px;
+		}
+		
+		h3{
+			font-weight:normal;
+			color: #b2083c;
+			font-size:18px;
+			margin:0px;
+		}
+		h4{
+			font-weight:normal;
+			font-style:italic;
+			font-size:14px;
+			margin-bottom:20px;
+		}
+		
+		p{margin:0px;}
+		
+		a{cursor:pointer;}
+	}	
+}
+.gridder-current-img {
+	max-width:100%;
+	box-shadow:0 1px 4px #222;
+	border:1px solid #222;
+}
+.gridder-img:hover {
+	opacity:0.8;
+}
+.gridder-float {
+	float:left;
+}
+.gridder-close {
+	opacity:0.7;
+	cursor:pointer;
+	position:absolute;
+	top:15px;
+	right:15px;
+	background:url("../images/close.png") no-repeat center center;
+	width:13px;
+	height:13px;
+}
+.gridder-close:hover {
+	opacity:1;
+}
+
+.gridder-prev {
+	opacity:0.7;
+	cursor:pointer;
+	position:absolute;
+	top:75px;
+	left:25px;
+	background:url("../images/prev.jpg") no-repeat center center;
+	width:40px;
+	height:99px;
+}
+.gridder-next {
+	opacity:0.7;
+	cursor:pointer;
+	position:absolute;
+	top:75px;
+	right:25px;
+	background:url("../images/next.jpg") no-repeat center center;
+	width:40px;
+	height:99px;
+}
+
+.gridder-prev:hover {
+	opacity:1;
+}
