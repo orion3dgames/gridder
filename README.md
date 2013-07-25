@@ -3,7 +3,7 @@ gridder
 
 Similar to Google Images Expander 
 
-I'm creating this jQuery plugin as i was unable to find a similar one on internet. Please note that i'm very to Jquery, so 
+I'm creating this jQuery plugin as i was unable to find a similar one on internet. Please note that i'm very new to Jquery, so 
 do not hesitate to correct me if something seems completly wrong. This is mostly for learning purposes.
 
 Live demo : http://www.oriongunning.com/demo/gridder/
