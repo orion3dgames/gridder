@@ -8,15 +8,15 @@ do not hesitate to correct me if something seems completly wrong. This is mostly
 
 Live demo : http://www.oriongunning.com/demo/gridder/
 
-# Get Started
+## Get Started
 
-## Include
+### Include
 ```html
 <link href="css/gridder.css" rel="stylesheet">
 <script src="js/gridder.js"></script>
 ```
 
-## The Markup
+### The Markup
 ```html
 <div class="gridder">
 	
@@ -34,7 +34,7 @@ Live demo : http://www.oriongunning.com/demo/gridder/
 </div>
 ```
 
-## Fire it up
+### Fire it up
 ```javascript
 <script>
 $(function() {
