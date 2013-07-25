@@ -17,6 +17,8 @@
 
 body{
 	font-family: Arial, sans-serif;
+	padding:0px;
+	margin:0px;
 }
 
 h1{
@@ -25,7 +27,7 @@ h1{
 
 /* GRIDDER CSS */
 .gridder{
-	width:700px;
+	width:100%;
 	margin: 0 auto;
 }
 
@@ -34,13 +36,13 @@ h1{
 	*display:inline;
 	white-space-collapsing:discard;
 	zoom:1;
-	width:172px;
+	//width:24.25%;
 	height:170px;
 	font-size:0px;
 	background: #CCC;
 	
 	margin-bottom: 0px;
-	margin-right: 3px;
+	margin-bottom: 0.7%;
 	cursor:pointer;
 	
 	position:relative;
@@ -93,7 +95,7 @@ h1{
 	float:left;
 	padding:0px;
 	display:none;
-	margin-bottom: 0px;
+	margin-bottom: 1%;
 	color:#000;
 	min-height:250px;
 	overflow:hidden;
