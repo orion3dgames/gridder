@@ -36,28 +36,26 @@ h1 {
 .gridder {
   width: 100%;
   margin: 0 auto;
+  font-size: 0;
 }
 
-/* line 34, gridder.scss */
+/* line 36, gridder.scss */
 .gridder-list {
   display: inline-block;
   *display: inline;
   white-space-collapsing: discard;
   zoom: 1;
   height: 170px;
-  font-size: 0px;
   background: #CCC;
-  margin-bottom: 0px;
-  margin-bottom: 0.7%;
   cursor: pointer;
   position: relative;
 }
-/* line 50, gridder.scss */
+/* line 46, gridder.scss */
 .gridder-list .thumb {
   display: block;
   height: 30px;
 }
-/* line 53, gridder.scss */
+/* line 49, gridder.scss */
 .gridder-list .thumb .overlay {
   position: absolute;
   color: #FFF;
@@ -72,33 +70,33 @@ h1 {
   padding: 10px 0;
   font-size: 16px;
 }
-/* line 67, gridder.scss */
+/* line 63, gridder.scss */
 .gridder-list .thumb .overlay span {
   font-weight: 11px;
   display: block;
 }
-/* line 74, gridder.scss */
+/* line 70, gridder.scss */
 .gridder-list img {
   width: 160px;
 }
 
-/* line 77, gridder.scss */
+/* line 73, gridder.scss */
 .gridder-list.imactive .overlay {
   background: #b2083c;
 }
 
-/* line 82, gridder.scss */
+/* line 78, gridder.scss */
 .gridder-content {
   display: none;
 }
 
-/* line 86, gridder.scss */
+/* line 82, gridder.scss */
 .gridder-img {
   width: 100%;
   cursor: pointer;
 }
 
-/* line 91, gridder.scss */
+/* line 87, gridder.scss */
 .gridder-show {
   text-align: center;
   position: relative;
@@ -106,25 +104,26 @@ h1 {
   float: left;
   padding: 0px;
   display: none;
-  margin-bottom: 1%;
   color: #000;
   min-height: 250px;
   overflow: hidden;
+  font-size: 0;
+  width: 100%;
 }
-/* line 103, gridder.scss */
+/* line 102, gridder.scss */
 .gridder-show .content {
   text-align: left;
   padding: 50px;
   padding-left: 100px;
   padding-right: 100px;
 }
-/* line 109, gridder.scss */
+/* line 108, gridder.scss */
 .gridder-show .content img {
   width: 160px;
   float: left;
   margin-right: 20px;
 }
-/* line 115, gridder.scss */
+/* line 114, gridder.scss */
 .gridder-show .content h2 {
   font-weight: bold;
   color: #b2083c;
@@ -132,8 +131,9 @@ h1 {
   margin: 0px;
   margin-bottom: 15px;
 }
-/* line 123, gridder.scss */
+/* line 122, gridder.scss */
 .gridder-show .content p {
+  font-size: 16px;
   margin: 0px;
   margin-bottom: 20px;
   line-height: 20px;

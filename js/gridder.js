@@ -9,7 +9,7 @@
 		var griddernext = $('<div class="gridder-next"></div>');
 		
 		var columns = 4;
-		var gutter = 1;
+		var gutter = 2;
 		
 		gridder.append(gridderclose,gridderprev,griddernext);
 		
@@ -23,6 +23,7 @@
 				result = column_width.toFixed(3);
 				
 				$(this).css('width', result+"%");
+				$(this).css('margin-bottom', gutter+"%");
 				
 				if((key+1)%columns){
 					$(this).css('margin-right', gutter+"%");
@@ -55,6 +56,9 @@
 					
 					/* Adds the content */
 					$('.gridder-show').append("<div class=content>"+currentcontent+"</div>");
+					
+					/* Adds the bottom gutter value */
+					$('.gridder-show').css('margin-bottom', gutter+"%");
 					
 					/* Make sure the correct bloc is active*/
 					if(!$(this).hasClass('imactive')){ 

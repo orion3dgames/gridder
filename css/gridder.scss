@@ -29,6 +29,8 @@ h1{
 .gridder{
 	width:100%;
 	margin: 0 auto;
+	
+	font-size:0;
 }
 
 .gridder-list {
@@ -36,15 +38,9 @@ h1{
 	*display:inline;
 	white-space-collapsing:discard;
 	zoom:1;
-	//width:24.25%;
 	height:170px;
-	font-size:0px;
-	background: #CCC;
-	
-	margin-bottom: 0px;
-	margin-bottom: 0.7%;
+	background: #CCC; 
 	cursor:pointer;
-	
 	position:relative;
 	
 	.thumb{
@@ -95,10 +91,13 @@ h1{
 	float:left;
 	padding:0px;
 	display:none;
-	margin-bottom: 1%;
 	color:#000;
 	min-height:250px;
 	overflow:hidden;
+	font-size:0;
+	width:100%;
+	
+
 	
 	.content{
 		text-align:left;
@@ -121,6 +120,7 @@ h1{
 		}
 		
 		p{
+			font-size:16px;
 			margin:0px;
 			margin-bottom:20px;
 			line-height:20px;
