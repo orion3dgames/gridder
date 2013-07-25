@@ -1,25 +1,62 @@
-/* line 1, gridder.scss */
+/* BASIC CSS */
+/* line 3, gridder.scss */
+.clearfix:before,
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+/* line 10, gridder.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 14, gridder.scss */
+.clearfix {
+  zoom: 1;
+  /* IE < 8 */
+}
+
+/* line 18, gridder.scss */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* line 22, gridder.scss */
+h1 {
+  text-align: center;
+}
+
+/* GRIDDER CSS */
+/* line 27, gridder.scss */
 .gridder {
   width: 700px;
   margin: 0 auto;
 }
 
-/* line 6, gridder.scss */
+/* line 32, gridder.scss */
 .gridder-list {
   display: inline-block;
   *display: inline;
+  white-space-collapsing: discard;
   zoom: 1;
-  width: 170px;
-  margin-bottom: 10px;
+  width: 172px;
+  height: 170px;
+  font-size: 0px;
+  background: #CCC;
+  margin-bottom: 0px;
+  margin-right: 3px;
   cursor: pointer;
+  position: relative;
 }
-/* line 15, gridder.scss */
+/* line 48, gridder.scss */
 .gridder-list .thumb {
   display: block;
-  position: relative;
   height: 30px;
 }
-/* line 19, gridder.scss */
+/* line 51, gridder.scss */
 .gridder-list .thumb .overlay {
   position: absolute;
   color: #FFF;
@@ -30,37 +67,37 @@
   font-weight: normal;
   display: block;
   background: #000000;
-  width: 160px;
+  width: 100%;
   padding: 10px 0;
-  font-weight: 16px;
+  font-size: 16px;
 }
-/* line 33, gridder.scss */
+/* line 65, gridder.scss */
 .gridder-list .thumb .overlay span {
   font-weight: 11px;
   display: block;
 }
-/* line 40, gridder.scss */
+/* line 72, gridder.scss */
 .gridder-list img {
   width: 160px;
 }
 
-/* line 43, gridder.scss */
+/* line 75, gridder.scss */
 .gridder-list.imactive .overlay {
   background: #b2083c;
 }
 
-/* line 48, gridder.scss */
+/* line 80, gridder.scss */
 .gridder-content {
   display: none;
 }
 
-/* line 52, gridder.scss */
+/* line 84, gridder.scss */
 .gridder-img {
   width: 100%;
   cursor: pointer;
 }
 
-/* line 57, gridder.scss */
+/* line 89, gridder.scss */
 .gridder-show {
   text-align: center;
   position: relative;
@@ -68,65 +105,69 @@
   float: left;
   padding: 0px;
   display: none;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   color: #000;
   min-height: 250px;
   overflow: hidden;
 }
-/* line 69, gridder.scss */
+/* line 101, gridder.scss */
 .gridder-show .content {
   text-align: left;
-  padding: 25px;
+  padding: 50px;
   padding-left: 100px;
   padding-right: 100px;
 }
-/* line 75, gridder.scss */
+/* line 107, gridder.scss */
 .gridder-show .content img {
   width: 160px;
   float: left;
   margin-right: 20px;
 }
-/* line 81, gridder.scss */
-.gridder-show .content h3 {
-  font-weight: normal;
+/* line 113, gridder.scss */
+.gridder-show .content h2 {
+  font-weight: bold;
   color: #b2083c;
-  font-size: 18px;
+  font-size: 30px;
   margin: 0px;
+  margin-bottom: 15px;
 }
-/* line 87, gridder.scss */
-.gridder-show .content h4 {
-  font-weight: normal;
-  font-style: italic;
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-/* line 94, gridder.scss */
+/* line 121, gridder.scss */
 .gridder-show .content p {
   margin: 0px;
+  margin-bottom: 20px;
+  line-height: 20px;
 }
-/* line 96, gridder.scss */
+/* line 127, gridder.scss */
 .gridder-show .content a {
   cursor: pointer;
 }
 
-/* line 99, gridder.scss */
+/* line 131, gridder.scss */
+.gridder-show:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+/* line 138, gridder.scss */
 .gridder-current-img {
   max-width: 100%;
   box-shadow: 0 1px 4px #222;
   border: 1px solid #222;
 }
 
-/* line 104, gridder.scss */
+/* line 143, gridder.scss */
 .gridder-img:hover {
   opacity: 0.8;
 }
 
-/* line 107, gridder.scss */
+/* line 146, gridder.scss */
 .gridder-float {
   float: left;
 }
 
-/* line 110, gridder.scss */
+/* line 149, gridder.scss */
 .gridder-close {
   opacity: 0.7;
   cursor: pointer;
@@ -138,12 +179,12 @@
   height: 13px;
 }
 
-/* line 120, gridder.scss */
+/* line 159, gridder.scss */
 .gridder-close:hover {
   opacity: 1;
 }
 
-/* line 124, gridder.scss */
+/* line 163, gridder.scss */
 .gridder-prev {
   opacity: 0.7;
   cursor: pointer;
@@ -155,7 +196,7 @@
   height: 99px;
 }
 
-/* line 134, gridder.scss */
+/* line 173, gridder.scss */
 .gridder-next {
   opacity: 0.7;
   cursor: pointer;
@@ -167,7 +208,7 @@
   height: 99px;
 }
 
-/* line 145, gridder.scss */
+/* line 184, gridder.scss */
 .gridder-prev:hover {
   opacity: 1;
 }

@@ -1,4 +1,3 @@
-/* SUPERBOX */
 ;(function($) {
 		
 	$.fn.Gridder = function(options) {
