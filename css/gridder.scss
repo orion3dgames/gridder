@@ -1,14 +1,21 @@
+.gridder{
+	width:700px;
+	margin: 0 auto;
+}
+
 .gridder-list {
 	display:inline-block;
 	*display:inline;
 	zoom:1;
 	width:170px;
+	
 	margin-bottom: 10px;
 	cursor:pointer;
 	
 	.thumb{
-		display:inline-block;
+		display:block;
 		position:relative;
+		height:30px;
 		.overlay{
 			position:absolute;
 			color:#FFF;
@@ -54,7 +61,7 @@
 	float:left;
 	padding:0px;
 	display:none;
-	margin-bottom: 11px;
+	margin-bottom: 10px;
 	color:#000;
 	min-height:250px;
 	overflow:hidden;
