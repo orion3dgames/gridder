@@ -21,9 +21,17 @@ body{
 	margin:0px;
 }
 
+.container{
+	width:100%;
+	margin:0 auto;
+	margin-bottom:1000px;
+}
+
 h1{
 	text-align:center;
 }
+
+
 
 /* GRIDDER CSS */
 .gridder{
@@ -42,8 +50,9 @@ h1{
 	background: #CCC; 
 	cursor:pointer;
 	position:relative;
+	overflow:hidden;
 	
-	.thumb{
+	.gridder-thumb{
 		display:block;
 		height:30px;
 		.overlay{
@@ -67,7 +76,7 @@ h1{
 		}
 	}
 	
-	img{width:160px;}
+	img{width:100%;}
 }
 .gridder-list.imactive{
 	.overlay{
@@ -77,11 +86,6 @@ h1{
 
 .gridder-content{
 	display:none;
-}
-
-.gridder-img {
-	width:100%;
-	cursor:pointer;
 }
 
 .gridder-show {
@@ -98,6 +102,12 @@ h1{
 	width:100%;
 	
 
+	.gridder-current-img{
+		float:left;
+		width:30%;
+		margin:50px;
+		margin-left:100px;
+	}
 	
 	.content{
 		text-align:left;

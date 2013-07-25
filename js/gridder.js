@@ -8,10 +8,10 @@
 		var gridderprev = $('<div class="gridder-prev"></div>');
 		var griddernext = $('<div class="gridder-next"></div>');
 		
-		var columns = 4;
-		var gutter = 2;
+		var columns = 5;
+		var gutter = 0.3;
 		
-		gridder.append(gridderclose,gridderprev,griddernext);
+		gridder.append(gridderimg,gridderclose,gridderprev,griddernext);
 		
 		return this.each(function() {
 	
@@ -37,6 +37,10 @@
 				$('.gridder-show .content').remove();
 				$('.gridder-show .slider').remove();
 				
+				var currentimg = $(this).find('.gridder-thumb img');
+				var imgData = currentimg.data('img');
+				gridderimg.attr('src', imgData);
+				
 				var currentcontent = $(this).find('.gridder-content').html();
 				
 				if ($(this).next().hasClass('gridder-show')) {
@@ -51,9 +55,7 @@
 				} else {
 					/* Adds the Expander bloc*/
 					mybloc = gridder.insertAfter(this).css('display', 'block');
-					
-					/* Get the current title */
-					
+	
 					/* Adds the content */
 					$('.gridder-show').append("<div class=content>"+currentcontent+"</div>");
 					
