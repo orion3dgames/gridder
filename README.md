@@ -22,7 +22,8 @@ Live demo : http://www.oriongunning.com/demo/gridder/
 	
 	<!-- The bloc -->
   	<div class="gridder-list">
-		<div class="thumb">
+		<div class="gridder-thumb">
+			<img src="thumbnail" data-img="image" />
 			<span class="overlay">Title 1</span>
 		</div>
 
