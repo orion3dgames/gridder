@@ -10,16 +10,19 @@ Live demo : http://www.oriongunning.com/demo/gridder/
 
 ```html
 <div class="gridder">
-  		<div class="gridder-list">
-				<div class="thumb">
-					<span class="overlay">Title 1</span>
-				</div>
+	
+	<!-- The bloc -->
+  	<div class="gridder-list">
+		<div class="thumb">
+			<span class="overlay">Title 1</span>
+		</div>
 
-				<div class="gridder-content">
-					<!-- Any Content you want to show in the expandiing panel -->
-				</div>
+		<div class="gridder-content">
+			<!-- Any Content you want to show in the expandiing panel -->
+		</div>
 				
-			</div>
+	</div>
+	
 </div>
 ```
 
