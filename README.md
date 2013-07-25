@@ -8,6 +8,15 @@ do not hesitate to correct me if something seems completly wrong. This is mostly
 
 Live demo : http://www.oriongunning.com/demo/gridder/
 
+# Get Started
+
+## Include
+```html
+<link href="css/gridder.css" rel="stylesheet">
+<script src="js/gridder.js"></script>
+```
+
+## The Markup
 ```html
 <div class="gridder">
 	
@@ -18,13 +27,23 @@ Live demo : http://www.oriongunning.com/demo/gridder/
 		</div>
 
 		<div class="gridder-content">
-			<!-- Any Content you want to show in the expandiing panel -->
-		</div>
-				
+			<!-- Any Content you want to show in the expanding panel -->
+		</div>			
 	</div>
 	
 </div>
 ```
 
+## Fire it up
+```javascript
+<script>
+$(function() {
+
+	// Call Gridder
+	$('.gridder').Gridder();
+
+});
+</script>
+```
 
 This is based on the Superbox plugin from Todd Motto : http://toddmotto.com/labs/superbox/
