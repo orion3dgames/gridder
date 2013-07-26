@@ -1,3 +1,5 @@
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/e1b01c4e1624d83a7dc71aecd50575dc "githalytics.com")](http://githalytics.com/oriongunning/gridder)
+
 gridder
 =======
 
