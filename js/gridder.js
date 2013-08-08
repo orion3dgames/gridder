@@ -3,45 +3,22 @@
 	$.fn.Gridder = function(options) {
 		
 		var gridder      = $('<div class="gridder-show"></div>');
-		var gridderimg   = $('<img src="" class="gridder-current-img">');
 		var gridderclose = $('<div class="gridder-close"></div>');
 		var gridderprev = $('<div class="gridder-prev"></div>');
 		var griddernext = $('<div class="gridder-next"></div>');
 		
-		var columns = 5;
-		var gutter = 0.3;
-		
-		gridder.append(gridderimg,gridderclose,gridderprev,griddernext);
+		gridder.append(gridderclose,gridderprev,griddernext);
 		
 		return this.each(function() {
-	
-	
-			$('.gridder-list').each(function(key, value){
-				
-				/* Initialize a few variables */
-				column_width = 100 / columns - (gutter) + (gutter / columns) ;
-				result = column_width.toFixed(3);
-				
-				$(this).css('width', result+"%");
-				$(this).css('margin-bottom', gutter+"%");
-				
-				if((key+1)%columns){
-					$(this).css('margin-right', gutter+"%");
-				}
-			});
-			
-			
+
 			$('.gridder-list').click(function(e) {
 				e.preventDefault();
 				
 				$('.gridder-show .content').remove();
-				$('.gridder-show .slider').remove();
-				
-				var currentimg = $(this).find('.gridder-thumb img');
-				var imgData = currentimg.data('img');
-				gridderimg.attr('src', imgData);
+				$('.gridder-show .image').remove();
 				
 				var currentcontent = $(this).find('.gridder-content').html();
+				var currentimage = $(this).find('.gridder-image').html();
 				
 				if ($(this).next().hasClass('gridder-show')) {
 					gridder.toggle();
@@ -50,23 +27,49 @@
 						$(this).removeClass('imactive');
 					}else{$(this).addClass('imactive');}
 					
+					
+					$('.gridder-show').append("<div class=image>"+currentimage+"</div>");
 					$('.gridder-show').append("<div class=content>"+currentcontent+"</div>");
 					
 				} else {
+					
 					/* Adds the Expander bloc*/
 					mybloc = gridder.insertAfter(this).css('display', 'block');
-	
-					/* Adds the content */
-					$('.gridder-show').append("<div class=content>"+currentcontent+"</div>");
 					
-					/* Adds the bottom gutter value */
-					$('.gridder-show').css('margin-bottom', gutter+"%");
+					$('.gridder-show').append("<div class=image>"+currentimage+"</div>");
+					$('.gridder-show').append("<div class=content>"+currentcontent+"</div>");
 					
 					/* Make sure the correct bloc is active*/
 					if(!$(this).hasClass('imactive')){ 
 					$('.imactive').removeClass('imactive');
 					$(this).addClass("imactive");
 					}
+					
+					/* ANIMATION */
+					
+					$('.image').animate({ opacity: 0}, 0);
+					 
+					 $('.gridder-show').animate({ 
+							height: 'auto' 
+							},
+							{
+							easing: 'swing',
+							duration: 300,
+							complete: function(){
+					 
+									$('.image').animate({ 
+										opacity: 1 
+										},
+										{
+										easing: 'swing',
+										duration: 500,
+										complete: function(){
+
+									     }
+									 });
+					     }
+					});
+					
 				}
 				
 				/* Scrolls to the current row */
@@ -78,10 +81,13 @@
 			
 			/* Close */
 			$('.gridder').on('click', '.gridder-close', function() {
-				$('.imactive').removeClass('imactive');
+				
+				
+				$('.imactive').removeClass('imactive');	
 				$('.gridder-show .content').remove();
-				$('.gridder-show .slider').remove();	
-				$('.gridder-show').remove();	
+				$('.gridder-show .image').remove();
+				$('.gridder-show').remove();
+	
 				
 			});
 			

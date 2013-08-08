@@ -1,3 +1,11 @@
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
 /* BASIC CSS */
 .clearfix:before,
 .clearfix:after {
@@ -16,13 +24,17 @@
 }
 
 body{
-	font-family: Arial, sans-serif;
+	font-family: 'Armata', sans-serif;
 	padding:0px;
 	margin:0px;
 }
 
+img{
+	max-width:100%;
+}
+
 .container{
-	width:100%;
+	width:1140px;
 	margin:0 auto;
 	margin-bottom:1000px;
 }
@@ -46,28 +58,36 @@ h1{
 	*display:inline;
 	white-space-collapsing:discard;
 	zoom:1;
-	height:170px;
-	background: #CCC; 
+	
+	width:24%;
+	margin-left:1%;
+	margin-bottom:1%;
+	
+	
+	background: #f3f3f3; 
 	cursor:pointer;
 	position:relative;
-	overflow:hidden;
 	
 	.gridder-thumb{
 		display:block;
-		height:30px;
+		
 		.overlay{
 			position:absolute;
-			color:#FFF;
+			color:#000;
 			z-index:1;
 			text-align:center;
 			left:0px;
 			bottom:0px;
 			font-weight:normal;
 			display:block;
-			background: #000000;
+			background: #f7f7f7;
 			width:100%;
 			padding:10px 0;
 			font-size: 16px;
+			
+			 @include transition(all, 0.2s, ease-in-out);
+			 
+			 opacity:0;
 			
 			span{
 				font-weight: 11px;
@@ -77,13 +97,34 @@ h1{
 	}
 	
 	img{width:100%;}
+	
+	&:hover .overlay{opacity:0.8;}
+	&.first{margin-left:0px;}
 }
 .gridder-list.imactive{
+	margin-bottom:26px;
+	
 	.overlay{
-		background: #b2083c;
+				
+	}
+	
+	&:after{
+		content: "";
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+		border-width: 0 14px 17px 14px;
+		border-color: transparent transparent #f7f7f7 transparent;
+		
+		display:block;
+		position:absolute;
+		bottom:0px;
+		left: 40%;
+		margin-bottom:-26px;
 	}
 }
 
+.gridder-image,
 .gridder-content{
 	display:none;
 }
@@ -96,24 +137,30 @@ h1{
 	padding:0px;
 	display:none;
 	color:#000;
-	min-height:250px;
 	overflow:hidden;
 	font-size:0;
-	width:100%;
+	width:90%;
+	padding: 5%;
+	margin-bottom:1%;
+	min-height:300px;
 	
 
-	.gridder-current-img{
+	.image{
 		float:left;
-		width:30%;
-		margin:50px;
-		margin-left:100px;
+		width:50%;
+		margin-left:50px;
+		
+		img{
+			
+		}
 	}
 	
 	.content{
+		
+		float:right;
+		width:30%;
 		text-align:left;
-		padding:50px;
-		padding-left:100px;
-		padding-right:100px;
+		margin-right:50px;
 		
 		img{
 			width:160px;
@@ -130,7 +177,8 @@ h1{
 		}
 		
 		p{
-			font-size:16px;
+			font-family: Arial;
+			font-size:14px;
 			margin:0px;
 			margin-bottom:20px;
 			line-height:20px;
@@ -138,6 +186,11 @@ h1{
 		
 		a{cursor:pointer;}
 	}	
+	
+	.image{
+		box-shadow:0 1px 4px #222;
+		border:1px solid #222;
+	}
 }
 
 .gridder-show:after {
@@ -147,11 +200,7 @@ h1{
 	overflow: hidden;
 }
 
-.gridder-current-img {
-	max-width:100%;
-	box-shadow:0 1px 4px #222;
-	border:1px solid #222;
-}
+
 .gridder-img:hover {
 	opacity:0.8;
 }
@@ -159,7 +208,7 @@ h1{
 	float:left;
 }
 .gridder-close {
-	opacity:0.7;
+	opacity:1;
 	cursor:pointer;
 	position:absolute;
 	top:15px;
@@ -176,8 +225,8 @@ h1{
 	opacity:0.7;
 	cursor:pointer;
 	position:absolute;
-	top:75px;
-	left:25px;
+	top:50px;
+	left:10px;
 	background:url("../images/prev.jpg") no-repeat center center;
 	width:40px;
 	height:99px;
@@ -186,8 +235,8 @@ h1{
 	opacity:0.7;
 	cursor:pointer;
 	position:absolute;
-	top:75px;
-	right:25px;
+	top:50px;
+	right:10px;
 	background:url("../images/next.jpg") no-repeat center center;
 	width:40px;
 	height:99px;
@@ -195,6 +244,32 @@ h1{
 
 .gridder-prev:hover {
 	opacity:1;
+}
+
+
+/* Media Queries
+*********************************************/
+/* Retina */
+@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (max--moz-device-pixel-ratio: 2) {
+	
+}
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	
+  
+}
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	
+  
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+	
+}
+/* Large desktop */
+@media (min-width: 1200px) {
+	
 }
 
 
