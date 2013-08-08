@@ -22,7 +22,8 @@ Live demo : http://www.oriongunning.com/demo/gridder/
 	
 	<!-- The bloc -->
   	<div class="gridder-list">
-		<div class="thumb">
+		<div class="gridder-thumb">
+			<img src="thumbnail" data-img="image" />
 			<span class="overlay">Title 1</span>
 		</div>
 
@@ -47,3 +48,6 @@ $(function() {
 ```
 
 This is based on the Superbox plugin from Todd Motto : http://toddmotto.com/labs/superbox/
+
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/e1b01c4e1624d83a7dc71aecd50575dc "githalytics.com")](http://githalytics.com/oriongunning/gridder)
+
