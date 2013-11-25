@@ -3,8 +3,9 @@ gridder
 
 Similar to Google Images Expander 
 
-I'm creating this jQuery plugin as i was unable to find a similar one on internet. Please note that i'm very new to Jquery, so 
-do not hesitate to correct me if something seems completly wrong. This is mostly for learning purposes.
+I'm creating this jQuery plugin as I was unable to find a similar one on internet. 
+
+Please note that i'm very new to Jquery, so you may stumble on weird errors. But i'm more than willing to help if this occurs.
 
 Live demo : http://www.oriongunning.com/demo/gridder/
 
@@ -48,6 +49,8 @@ $(function() {
 ```
 
 This is based on the Superbox plugin from Todd Motto : http://toddmotto.com/labs/superbox/
+
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.
 
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/e1b01c4e1624d83a7dc71aecd50575dc "githalytics.com")](http://githalytics.com/oriongunning/gridder)
 
