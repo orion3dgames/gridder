@@ -1,7 +1,7 @@
 gridder
 =======
 
-Similar to Google Images Expander 
+A jquery plugin imitating the Google Images page behaviour.  
 
 I'm creating this jQuery plugin as I was unable to find a similar one on internet. 
 
