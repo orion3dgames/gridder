@@ -1,5 +1,7 @@
-gridder
+Gridder
 =======
+
+Version : 1.1
 
 A jquery plugin imitating the Google Images page behaviour.  
 

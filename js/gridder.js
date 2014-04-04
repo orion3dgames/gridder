@@ -1,3 +1,8 @@
+/*!
+ * GRIDDER (http://www.oriongunning.com/)
+ * Version 1.1
+ * This work is licensed under a Creative Commons Attribution 3.0 Unported License. (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
 ;(function($) {
 
     $.fn.Gridder = function(options) {
@@ -18,7 +23,7 @@
                 var currentcontent = $(this).find('.gridder-content').html();
                 var currentimage = $(this).find('.gridder-thumb').html();
                 
-                /* Make sure the correct bloc is active*/
+                /* Make sure the correct bloc is active */
                 if (!$(this).hasClass('imactive')) {
                     $('.imactive').removeClass('imactive');
                     $(this).addClass("imactive");
