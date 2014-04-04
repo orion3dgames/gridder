@@ -22,16 +22,15 @@ Live demo : http://www.oriongunning.com/demo/gridder/
 <div class="gridder">
 	
 	<!-- The bloc -->
-  	<div class="gridder-list">
+  	 <div class="gridder-list">
 		<div class="gridder-thumb">
-			<img src="thumbnail" data-img="image" />
-			<span class="overlay">Title 1</span>
+		    <img src="http://placehold.it/600x400" data-bigimage="http://placehold.it/600x400" />
+		    <span class="overlay">Title 2</span>
 		</div>
-
 		<div class="gridder-content">
-			<!-- Any Content you want to show in the expanding panel -->
-		</div>			
-	</div>
+		   <!-- Any Content you want to show in the expanding panel -->
+		</div>
+	  </div>
 	
 </div>
 ```
@@ -48,7 +47,11 @@ $(function() {
 </script>
 ```
 
-This is based on the Superbox plugin from Todd Motto : http://toddmotto.com/labs/superbox/
+### Coming soon ...
+
+* Ajax powered system
+* History
+* Multiple instances
 
 <a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.
 

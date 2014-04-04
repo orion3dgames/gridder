@@ -1,85 +1,76 @@
-;
-(function($) {
+;(function($) {
 
     $.fn.Gridder = function(options) {
 
+        var mybloc;
         var gridder = $('<div class="gridder-show"></div>');
-        var gridderclose = $('<div class="gridder-close"></div>');
-        var gridderprev = $('<div class="gridder-nav prev"><div></div></div>');
-        var griddernext = $('<div class="gridder-nav next"><div></div></div>');
-
-        gridder.append(gridderclose, gridderprev, griddernext);
-
+        var animationSpeed = 600;
+		var animationEasing = "linear";
+        var visible = false;
+        
         return this.each(function() {
 
             $('.gridder-list').click(function(e) {
                 e.preventDefault();
 
-                $('.gridder-show .padding').remove();
-                $('.gridder-show .content').remove();
-                $('.gridder-show .image').remove();
+                $('.gridder-show').remove();
 
                 var currentcontent = $(this).find('.gridder-content').html();
                 var currentimage = $(this).find('.gridder-thumb').html();
                 
-                console.log(currentimage);
-
-                if ($(this).next().hasClass('gridder-show')) {
-                    
-                    gridder.toggle();
-
-                    if ($(this).hasClass('imactive')) {
-                        $(this).removeClass('imactive');
-                    } else {
-                        $(this).addClass('imactive');
-                    }
-
-                    $('.gridder-show').append("<div class=image>" + currentimage + "</div>");
-                    $('.gridder-show').append("<div class=content>" + currentcontent + "</div>");
-                    
-
-                } else {
-
-                    /* Adds the Expander bloc*/
-                    mybloc = gridder.insertAfter(this).css('display', 'block');
-
-                    $('.gridder-show').append('<div class=image>' + currentimage + '</div>');
-                    $('.gridder-show').append("<div class=content>" + currentcontent + "</div>");
-
-                    /* Make sure the correct bloc is active*/
-                    if (!$(this).hasClass('imactive')) {
-                        $('.imactive').removeClass('imactive');
-                        $(this).addClass("imactive");
-                    }
-
-                    
-
+                /* Make sure the correct bloc is active*/
+                if (!$(this).hasClass('imactive')) {
+                    $('.imactive').removeClass('imactive');
+                    $(this).addClass("imactive");
                 }
+                
+                /* ADD LOADING BLOC */
+                var $htmlcontent = $('<li class="gridder-show"></li>');
+                mybloc = $htmlcontent.insertAfter(this);
+                
+                htmlcontent = "<div class=\"padding\">";
+                    htmlcontent += "<a class=gridder-close></a>";
+                    htmlcontent += "<a class=\"gridder-nav prev\"></a>";
+                    htmlcontent += "<a class=\"gridder-nav next\"></a>";
+                    htmlcontent += "<div class=image>"+ currentimage+"</div>";
+                    htmlcontent += "<div class=content>"+ currentcontent+"</div>";
+                htmlcontent += "</div>";
+                
+                mybloc.html(htmlcontent);
 
+                if (!visible) {
+                    mybloc.find('.padding').slideDown(animationSpeed, animationEasing, function() {
+                        visible = true;
+                    });
+                } else {
+                    mybloc.find('.padding').fadeIn(animationSpeed, animationEasing, function() {
+                        visible = true;
+                    });
+                }
+                
                 /* Scrolls to the current row */
                 $('html, body').animate({
                     scrollTop: $(this).position().top
                 }, 0);
-
+                
             });
-
-            /* Close */
-            $('.gridder').on('click', '.gridder-close', function() {
-                $('.imactive').removeClass('imactive');
-                $('.gridder-show .content').remove();
-                $('.gridder-show .image').remove();
-                $('.gridder-show').remove();
-            });
-
-            /* Next */
+            
+             /* Next */
             $('.gridder').on('click', '.gridder-nav.next', function() {
-                $(this).parent().next().trigger('click');
+                $(this).parents('.gridder-show').next().trigger('click');
             });
 
             /* Previous */
             $('.gridder').on('click', '.gridder-nav.prev', function() {
-                $(this).parent().prev().prev().trigger('click');
+                $(this).parents('.gridder-show').prev().prev().trigger('click');
             });
+            
+            /* Close */
+            $('.gridder').on('click', '.gridder-close', function() {
+                $('.imactive').removeClass('imactive');
+                $('.gridder-show').remove();
+            });
+
 
         });
     };
