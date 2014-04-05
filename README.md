@@ -9,7 +9,13 @@ I'm creating this jQuery plugin as I was unable to find a similar one on interne
 
 Please note that i'm very new to Jquery, so you may stumble on weird errors. But i'm more than willing to help if this occurs.
 
-Live demo : http://www.oriongunning.com/demo-jquery-gridder-similar-google-images/
+Live demo : http://www.oriongunning.com/demo/gridder/demo.html
+
+### Coming soon ...
+
+* Ajax powered system ( Coming in next version )
+* History
+* Multiple instances on teh same page
 
 ## Get Started
 
@@ -48,12 +54,6 @@ $(function() {
 });
 </script>
 ```
-
-### Coming soon ...
-
-* Ajax powered system
-* History
-* Multiple instances
 
 <a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.
 
