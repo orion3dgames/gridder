@@ -1,0 +1,16 @@
+/* BASIC CSS */
+.clearfix:before, .clearfix:after { content: "."; display: block; height: 0; overflow: hidden; }
+
+.clearfix:after { clear: both; }
+
+.clearfix { zoom: 1; /* IE < 8 */ }
+
+body { font-family: 'Armata', sans-serif; padding: 0px; margin: 0px; }
+
+img { max-width: 100%; }
+
+.container { width: 1140px; margin: 0 auto; margin-bottom: 1000px; }
+
+h1 { text-align: center; }
+
+/*# sourceMappingURL=demo.css.map */

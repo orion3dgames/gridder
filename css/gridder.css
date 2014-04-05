@@ -1,24 +1,9 @@
-/* BASIC CSS */
-.clearfix:before, .clearfix:after { content: "."; display: block; height: 0; overflow: hidden; }
-
-.clearfix:after { clear: both; }
-
-.clearfix { zoom: 1; /* IE < 8 */ }
-
-body { font-family: 'Armata', sans-serif; padding: 0px; margin: 0px; }
-
-img { max-width: 100%; }
-
-.container { width: 1140px; margin: 0 auto; margin-bottom: 1000px; }
-
-h1 { text-align: center; }
-
 /* GRIDDER CSS */
 .gridder { width: 100%; margin: 0 auto; font-size: 0; }
 
 .gridder-list { display: inline-block; *display: inline; white-space-collapsing: discard; zoom: 1; width: 24%; margin-left: 1.3%; margin-bottom: 1%; background: #f3f3f3; cursor: pointer; position: relative; }
 .gridder-list .gridder-thumb { display: block; }
-.gridder-list .gridder-thumb .overlay { position: absolute; color: #000; z-index: 1; text-align: center; left: 0px; bottom: 0px; font-weight: normal; display: block; background: #f7f7f7; width: 100%; padding: 10px 0; font-size: 16px; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; opacity: 0; }
+.gridder-list .gridder-thumb .overlay { position: absolute; color: #000; z-index: 1; text-align: center; left: 0px; bottom: 0px; font-weight: normal; display: block; background: #f7f7f7; width: 100%; padding: 10px 0; font-size: 16px; opacity: 0; }
 .gridder-list .gridder-thumb .overlay span { font-weight: 11px; display: block; }
 .gridder-list img { width: 100%; }
 .gridder-list:hover .overlay { opacity: 0.8; }
