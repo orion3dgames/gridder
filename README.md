@@ -14,10 +14,9 @@ Live demo : http://www.oriongunning.com/demo/gridder/demo.html
 =======
 
 AJAX Version : https://github.com/oriongunning/gridder-ajax
-=======
 
 ### Coming soon ...
-* Multiple instances on teh same page
+* Multiple instances on the same page
 
 ## Get Started
 
