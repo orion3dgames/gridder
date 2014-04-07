@@ -11,10 +11,13 @@ Please note that i'm very new to Jquery, so you may stumble on weird errors. But
 
 Live demo : http://www.oriongunning.com/demo/gridder/demo.html
 
-### Coming soon ...
+=======
 
-* Ajax powered system ( Coming in next version )
-* History
+AJAX Version : http://www.oriongunning.com/demo/gridder/demo.html
+
+=======
+
+### Coming soon ...
 * Multiple instances on teh same page
 
 ## Get Started
