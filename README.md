@@ -13,8 +13,7 @@ Live demo : http://www.oriongunning.com/demo/gridder/demo.html
 
 =======
 
-AJAX Version : http://www.oriongunning.com/demo/gridder/demo.html
-
+AJAX Version : https://github.com/oriongunning/gridder-ajax
 =======
 
 ### Coming soon ...
