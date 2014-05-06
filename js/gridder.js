@@ -45,7 +45,6 @@
 					gridderShow.animate({height:'540px'}, 400, 'swing', function() {
 						var scrollDest = $('.gridder-show').position().top-200
 						if ($('html, body').scrollTop() !== scrollDest) {
-							window.alert('wowow');
 							$('html, body').animate({
 								scrollTop: scrollDest
 							}, 400, 'swing');
