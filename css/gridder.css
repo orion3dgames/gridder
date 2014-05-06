@@ -221,56 +221,6 @@
 	opacity: 1;
 }
 
-.gridder-list select.size-value {
-	width: 65px;
-	height: 38px;
-	border-radius: 0;
-	border: 0;
-	-webkit-appearance: none;
-	appearance: none;
-	margin-right:30px;
-	background: #436070;
-	color: #FFF;
-	font-size: 16px;
-	font-family: 'Raleway', sans-serif;
-	padding: 0 20px;
-	cursor:pointer;
-}
-
-.gridder-list select.size-value:hover {
-	border:2px solid #436070;
-	padding:8px 18px;
-	background:none;
-	color:#436070;
-}
-
-.gridder-list a.add-to-cart {
-	font-weight: 400;
-	font-size: 16px;
-	color: #f0f0f0;
-	font-family: 'Raleway', sans-serif;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	padding: 10px 20px;
-	background: #436070;
-	display: inline-block;
-	margin-top: 30px;
-	outline: none;
-}
-
-.gridder-list a.add-to-cart:hover {
-	border:2px solid #436070;
-	padding:8px 18px;
-	background:none;
-	color:#436070;
-}
-
-.gridder-list a.add-to-cart::before {
-	content: '+';
-	display: inline-block;
-	margin-right: 10px;
-}
-
 /* Media Queries
 *********************************************/
 /* Retina */
