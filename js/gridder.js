@@ -3,18 +3,22 @@
  * Version 1.1
  * This work is licensed under a Creative Commons Attribution 3.0 Unported License. 
  */
+
 ;(function($) {
 
-    $.fn.Gridder = function(options) {
+    $.fn.gridderExpander = function(options) {
 
-        var mybloc;
-        var gridder = $('<div class="gridder-show"></div>');
         var animationSpeed = 600;
         var animationEasing = "linear";
         var visible = false;
-        
-        return this.each(function() {
 
+        return this.each(function() {
+            
+            id++;
+            
+            var mybloc;
+            var gridder = $('<div class="gridder-show gridder-show-'+id+'"></div>');
+            
             $('.gridder-list').click(function(e) {
                 e.preventDefault();
                 
@@ -33,12 +37,12 @@
                 /* EXPANDED OUTPUT */
                 var currentcontent = $(this).find('.gridder-content').html();
                 var currentimage = $(this).find('.gridder-thumb').html();
-                htmlcontent = "<div class=\"padding\">";
+                var htmlcontent = "<div class=\"padding\">";
                     htmlcontent += "<a class=gridder-close></a>";
                     htmlcontent += "<a class=\"gridder-nav prev\"></a>";
                     htmlcontent += "<a class=\"gridder-nav next\"></a>";
-                    htmlcontent += "<div class=image>"+ currentimage+"</div>";
-                    htmlcontent += "<div class=content>"+ currentcontent+"</div>";
+                    htmlcontent += "<div class=\"image\">"+ currentimage+"</div>";
+                    htmlcontent += "<div class=\"content\">"+ currentcontent+"</div>";
                 htmlcontent += "</div>";
                 
                 mybloc.html(htmlcontent);
@@ -72,6 +76,7 @@
             
             /* CLOSE BUTTON */
             $('.gridder').on('click', '.gridder-close', function() {
+                visible = false;
                 $('.imactive').removeClass('imactive');
                 $('.gridder-show').remove();
             });
