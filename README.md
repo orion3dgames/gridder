@@ -15,8 +15,13 @@ Live demo : http://www.oriongunning.com/demo/gridder/demo.html
 
 AJAX Version : https://github.com/oriongunning/gridder-ajax
 
+### FEATURES
+- Multiple instances
+- Really easy to use and customize
+- Expanding preview with details
+
 ### Coming soon ...
-* Multiple instances on the same page
+- A new theme!
 
 ## Get Started
 
