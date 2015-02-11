@@ -1,4 +1,4 @@
-Gridder
+Gridder V1
 =======
 
 Version : 1.1
@@ -9,11 +9,10 @@ I'm creating this jQuery plugin as I was unable to find a similar one on interne
 
 Please note that i'm very new to Jquery, so you may stumble on weird errors. But i'm more than willing to help if this occurs.
 
-Live demo : http://www.oriongunning.com/demo/gridder/demo.html
+Live demo GRIDDER v1 : http://www.oriongunning.com/demo/gridder/demo.html
+** NEW ** Live demo GRIDDER v2 : http://www.oriongunning.com/demo/gridder/demo.html
 
 =======
-
-AJAX Version : https://github.com/oriongunning/gridder-ajax
 
 ### FEATURES
 - Multiple instances
