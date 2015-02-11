@@ -11,7 +11,8 @@ Please note that i'm very new to Jquery, so you may stumble on weird errors. But
 
 Live demo GRIDDER v1 : http://www.oriongunning.com/demo/gridder/demo.html
 
-** NEW ** Live demo GRIDDER v2 : http://www.oriongunning.com/demo/gridder/demo.html
+**NEW** Live demo GRIDDER v2 : http://www.oriongunning.com/demo/gridder/demo.html
+- Github link for V2 : https://github.com/oriongunning/gridder-ajax
 
 =======
 
