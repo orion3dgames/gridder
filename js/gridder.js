@@ -14,8 +14,6 @@
 
         return this.each(function() {
             
-            id++;
-            
             var mybloc;
             var gridder = $('<div class="gridder-show gridder-show-'+id+'"></div>');
             
