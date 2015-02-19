@@ -5,7 +5,6 @@
  */
 
 ;(function($) {
-
     $.fn.gridderExpander = function(options) {
 
         var animationSpeed = 600;
