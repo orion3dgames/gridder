@@ -14,7 +14,7 @@
         return this.each(function() {
             
             var mybloc;
-            var gridder = $('<div class="gridder-show gridder-show-'+id+'"></div>');
+            var gridder = $('<div class="gridder-show"></div>');
             
             $('.gridder-list').click(function(e) {
                 e.preventDefault();
