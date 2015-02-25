@@ -360,9 +360,14 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="js/gridder.js"></script>
         <script>
-            $(function() {
+            jQuery(function($) {
                 // Call Gridder
-                $('.gridder').gridderExpander();
+                $('.gridder').gridderExpander({
+                    scrollOffset: 30,
+                    scrollTo: 'panel', // 'panel' or 'listitem'
+                    animationSpeed: 500,
+                    animationEasing: "easeInOutExpo"
+                });
             });
         </script>
     </body>
