@@ -9,8 +9,8 @@
 .gridder-list:hover .overlay { opacity: 0.8; }
 .gridder-list.first { margin-left: 0px; }
 
-.gridder-list.imactive { margin-bottom: 26px; }
-.gridder-list.imactive:after { content: ""; width: 0px; height: 0px; border-style: solid; border-width: 0 14px 17px 14px; border-color: transparent transparent #f7f7f7 transparent; display: block; position: absolute; bottom: 0px; left: 40%; margin-bottom: -26px; }
+.gridder-list.selectedItem { margin-bottom: 26px; }
+.gridder-list.selectedItem:after { content: ""; width: 0px; height: 0px; border-style: solid; border-width: 0 14px 17px 14px; border-color: transparent transparent #f7f7f7 transparent; display: block; position: absolute; bottom: 0px; left: 40%; margin-bottom: -26px; }
 
 .gridder-image, .gridder-content { display: none; }
 
