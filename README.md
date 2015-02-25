@@ -1,7 +1,7 @@
 Gridder V1
 =======
 
-Version : 1.1
+Version : 1.2
 
 A jquery plugin imitating the Google Images page behaviour.  
 
@@ -9,7 +9,7 @@ I'm creating this jQuery plugin as I was unable to find a similar one on interne
 
 Please note that i'm very new to Jquery, so you may stumble on weird errors. But i'm more than willing to help if this occurs.
 
-Live demo GRIDDER v1 : http://www.oriongunning.com/demo/gridder/demo.html
+Live demo GRIDDER v1.2 : http://www.oriongunning.com/demo/gridder/demo.html
 
 =======
 
@@ -24,6 +24,7 @@ Live demo GRIDDER v2 : http://www.oriongunning.com/demo/gridder/demo.html
 - Multiple instances
 - Really easy to use and customize
 - Expanding preview with details
+- Smooth Scrolling
 
 ### Coming soon ...
 - A new theme!
@@ -60,7 +61,12 @@ Live demo GRIDDER v2 : http://www.oriongunning.com/demo/gridder/demo.html
 $(function() {
 
 	// Call Gridder
-	$('.gridder').Gridder();
+	$('.gridder').Gridder({
+        scrollOffset: 30,
+        scrollTo: 'panel', // panel or listitem
+        animationSpeed: 600,
+        animationEasing: "easeInOutExpo"
+    });
 
 });
 </script>

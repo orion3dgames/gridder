@@ -1,6 +1,6 @@
 /*!
- * GRIDDER (http://www.oriongunning.com/)
- * Version 1.1
+ * GRIDDER V1 (http://www.oriongunning.com/)
+ * Version 1.2
  * This work is licensed under a Creative Commons Attribution 3.0 Unported License. 
  */
 
