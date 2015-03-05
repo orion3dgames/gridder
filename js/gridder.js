@@ -4,17 +4,17 @@
  * This work is licensed under a Creative Commons Attribution 3.0 Unported License. 
  */
 
-jQuery.extend(jQuery.easing,{
-    def:"easeInOutExpo",
-    easeInOutExpo:function(e,f,a,h,g){if(f==0){return a}if(f==g){return a+h}if((f/=g/2)<1){return h/2*Math.pow(2,10*(f-1))+a}return h/2*(-Math.pow(2,-10*--f)+2)+a}
-});
-
 ;(function($) {
     
+    /* CUSTOM EASING */
+    $.fn.extend($.easing,{
+        def:"easeInOutExpo", easeInOutExpo:function(e,f,a,h,g){if(f==0){return a}if(f==g){return a+h}if((f/=g/2)<1){return h/2*Math.pow(2,10*(f-1))+a}return h/2*(-Math.pow(2,-10*--f)+2)+a}
+    });
+
     $.fn.gridderExpander = function(options) {
         
         /* GET DEFAULT OPTIONS OR USE THE ONE PASSED IN THE FUNCTION  */
-        var opts = $.extend( {}, $.fn.gridderExpander.defaults, options );
+        var opts = $.extend( {}, $.fn.gridderExpander.defaults, options );      
         
         /* SET LOCAL VARS */
         var animationSpeed = opts.animationSpeed;
@@ -24,7 +24,10 @@ jQuery.extend(jQuery.easing,{
 
         /* OTHER VARS */
         var visible = false;
-              
+        
+        /* START CALLBACK */
+        opts.onStart();
+        
         return this.each(function() {
             
             var mybloc;
@@ -71,10 +74,14 @@ jQuery.extend(jQuery.easing,{
                 if (!visible) {
                     mybloc.find('.padding').slideDown(animationSpeed, animationEasing, function() {
                         visible = true;
+                        
+                        opts.onExpanded();
                     });
                 } else {
                     mybloc.find('.padding').fadeIn(animationSpeed, animationEasing, function() {
                         visible = true;
+                        
+                        opts.onChanged();
                     });
                 }
                 
@@ -95,6 +102,8 @@ jQuery.extend(jQuery.easing,{
                 visible = false;
                 $('.selectedItem').removeClass('selectedItem');
                 $('.gridder-show').remove();
+                
+                opts.onClosed();
             });
 
         });
@@ -104,7 +113,19 @@ jQuery.extend(jQuery.easing,{
         scrollOffset: 30,
         scrollTo: 'panel', // panel or listitem
         animationSpeed: 400,
-        animationEasing: "easeInOutExpo"
+        animationEasing: "easeInOutExpo",
+        onStart: function(){
+            console.log('Gridder Inititialized');
+        },
+        onExpanded: function(){
+            console.log('Gridder Expanded');
+        },
+        onChanged: function(){
+            console.log('Gridder Changed');
+        },
+        onClosed: function(){
+            console.log('Gridder Closed');
+        }
     };
     
 })(jQuery);

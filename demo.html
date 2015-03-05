@@ -365,7 +365,10 @@
                     scrollOffset: 30,
                     scrollTo: 'panel', // 'panel' or 'listitem'
                     animationSpeed: 400,
-                    animationEasing: "easeInOutExpo"
+                    animationEasing: "easeInOutExpo",
+                    onComplete: function() {
+                        console.log('DONE')
+                    }
                 });
             });
         </script>
