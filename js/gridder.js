@@ -9,8 +9,8 @@
     /* CUSTOM EASING */
     $.fn.extend($.easing,{
         def:"easeInOutExpo", easeInOutExpo:function(e,f,a,h,g){if(f==0){return a}if(f==g){return a+h}if((f/=g/2)<1){return h/2*Math.pow(2,10*(f-1))+a}return h/2*(-Math.pow(2,-10*--f)+2)+a}
-    });
-
+    });    
+    
     $.fn.gridderExpander = function(options) {
         
         /* GET DEFAULT OPTIONS OR USE THE ONE PASSED IN THE FUNCTION  */
@@ -22,17 +22,34 @@
         var scrollTo = opts.scrollTo;
         var scrollOffset = opts.scrollOffset;
 
-        /* OTHER VARS */
-        var visible = false;
-        
-        /* START CALLBACK */
-        opts.onStart();
-        
         return this.each(function() {
             
             var mybloc;
+            var _this = $(this);
+            var visible = false;
+            
+            /* START CALLBACK */
+            opts.onStart(_this);
+            
+            function closeExpander(base, opts) {
+                // SCROLL TO CORRECT POSITION FIRST
+                $('html, body').animate({
+                    scrollTop: base.find('.selectedItem').offset().top - opts.scrollOffset
+                }, {
+                    duration: 200,
+                    easing: opts.animationEasing
+                });
 
-            $('.gridder-list').click(function(e) {
+                // REMOVES GRIDDER EXPAND AREA
+                visible = false;
+                base.find('.selectedItem').removeClass('selectedItem');
+                base.find('.gridder-show').remove();
+
+                // CLOSE CALLBACK 
+                opts.onClosed(base);
+            }
+            
+            _this.find('.gridder-list').on('click', function(e) {
                
                 e.preventDefault();   
                 
@@ -40,15 +57,17 @@
                 
                 /* ENSURES THE CORRECT BLOC IS ACTIVE */
                 if (!myself.hasClass('selectedItem')) {
-                    $('.selectedItem').removeClass('selectedItem');
+                    _this.find('.selectedItem').removeClass('selectedItem');
                     myself.addClass("selectedItem");
                 }else{
+                    console.log('Already Opened');
                     // THE SAME IS ALREADY OPEN, LET'S CLOSE IT
-                    
+                    closeExpander(_this, opts);
+                    return;
                 }
                 
                 /* REMOVES PREVIOUS BLOC */
-                $('.gridder-show').remove(); 
+                _this.find('.gridder-show').remove(); 
  
                 /* SCROLL TO CORRECT POSITION FIRST */
                 $('html, body').animate({
@@ -79,47 +98,32 @@
                         visible = true;
                         
                         /* AFTER EXPAND CALLBACK */
-                        opts.onExpanded();
+                        opts.onExpanded(_this);
                     });
                 } else {
                     mybloc.find('.padding').fadeIn(animationSpeed, animationEasing, function() {
                         visible = true;
                         
                         /* CHANGED CALLBACK */
-                        opts.onChanged();
+                        opts.onChanged(_this);
                     });
                 }
                 
             });
             
-             /* NEXT BUTTON */
-            $('.gridder').on('click', '.gridder-nav.next', function() {
+            /* NEXT BUTTON */
+            _this.on('click', '.gridder-nav.next', function() {
                 $(this).parents('.gridder-show').next().trigger('click');
             });
 
             /* PREVIOUS BUTTON */
-            $('.gridder').on('click', '.gridder-nav.prev', function() {
+            _this.on('click', '.gridder-nav.prev', function() {
                 $(this).parents('.gridder-show').prev().prev().trigger('click');
             });
             
             /* CLOSE BUTTON */
-            $('.gridder').on('click', '.gridder-close', function() {
-                
-                /* SCROLL TO CORRECT POSITION FIRST */
-                $('html, body').animate({
-                    scrollTop: $('.selectedItem').offset().top - scrollOffset
-                }, {
-                    duration: 200,
-                    easing: animationEasing
-                });
-                
-                /* REMOVES GRIDDER EXPAND AREA */
-                visible = false;
-                $('.selectedItem').removeClass('selectedItem');
-                $('.gridder-show').remove();
-                
-                /* CLOSE CALLBACK */
-                opts.onClosed();
+            _this.on('click', '.gridder-close', function() {
+                closeExpander(_this, opts);
             });
 
         });
@@ -130,16 +134,16 @@
         scrollTo: 'panel', // panel or listitem
         animationSpeed: 400,
         animationEasing: "easeInOutExpo",
-        onStart: function(){
+        onStart: function(base){
             console.log('Gridder Inititialized');
         },
-        onExpanded: function(){
+        onExpanded: function(base){
             console.log('Gridder Expanded');
         },
-        onChanged: function(){
+        onChanged: function(base){
             console.log('Gridder Changed');
         },
-        onClosed: function(){
+        onClosed: function(base){
             console.log('Gridder Closed');
         }
     };
