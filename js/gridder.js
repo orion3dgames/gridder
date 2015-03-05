@@ -42,6 +42,9 @@
                 if (!myself.hasClass('selectedItem')) {
                     $('.selectedItem').removeClass('selectedItem');
                     myself.addClass("selectedItem");
+                }else{
+                    // THE SAME IS ALREADY OPEN, LET'S CLOSE IT
+                    
                 }
                 
                 /* REMOVES PREVIOUS BLOC */
