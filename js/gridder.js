@@ -75,12 +75,14 @@
                     mybloc.find('.padding').slideDown(animationSpeed, animationEasing, function() {
                         visible = true;
                         
+                        /* AFTER EXPAND CALLBACK */
                         opts.onExpanded();
                     });
                 } else {
                     mybloc.find('.padding').fadeIn(animationSpeed, animationEasing, function() {
                         visible = true;
                         
+                        /* CHANGED CALLBACK */
                         opts.onChanged();
                     });
                 }
@@ -99,10 +101,21 @@
             
             /* CLOSE BUTTON */
             $('.gridder').on('click', '.gridder-close', function() {
+                
+                /* SCROLL TO CORRECT POSITION FIRST */
+                $('html, body').animate({
+                    scrollTop: $('.selectedItem').offset().top - scrollOffset
+                }, {
+                    duration: 200,
+                    easing: animationEasing
+                });
+                
+                /* REMOVES GRIDDER EXPAND AREA */
                 visible = false;
                 $('.selectedItem').removeClass('selectedItem');
                 $('.gridder-show').remove();
                 
+                /* CLOSE CALLBACK */
                 opts.onClosed();
             });
 
