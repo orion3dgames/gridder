@@ -1,7 +1,7 @@
 Gridder V1
 =======
 
-Version : 1.2
+Version : 1.3
 
 A jquery plugin imitating the Google Images page behaviour.  
 
@@ -9,7 +9,7 @@ I'm creating this jQuery plugin as I was unable to find a similar one on interne
 
 Please note that i'm very new to Jquery, so you may stumble on weird errors. But i'm more than willing to help if this occurs.
 
-Live demo GRIDDER v1.2 : http://www.oriongunning.com/demo/gridder/demo.html
+Live demo GRIDDER v1.3 : http://www.oriongunning.com/demo/gridder/demo.html
 
 =======
 
@@ -25,6 +25,7 @@ Live demo GRIDDER v2 : http://www.oriongunning.com/demo/gridder/demo.html
 - Really easy to use and customize
 - Expanding preview with details
 - Smooth Scrolling
+- Callbacks (so you can launch other plugins)
 
 ### Coming soon ...
 - A new theme!
@@ -64,8 +65,20 @@ $(function() {
 	$('.gridder').Gridder({
         scrollOffset: 30,
         scrollTo: 'panel', // panel or listitem
-        animationSpeed: 600,
-        animationEasing: "easeInOutExpo"
+        animationSpeed: 400,
+        animationEasing: "easeInOutExpo",
+        onStart: function(base){
+            console.log('Gridder Inititialized');
+        },
+        onExpanded: function(base){
+            console.log('Gridder Expanded');
+        },
+        onChanged: function(base){
+            console.log('Gridder Changed');
+        },
+        onClosed: function(base){
+            console.log('Gridder Closed');
+        }
     });
 
 });
@@ -74,5 +87,4 @@ $(function() {
 
 <a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.
 
-[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/e1b01c4e1624d83a7dc71aecd50575dc "githalytics.com")](http://githalytics.com/oriongunning/gridder)
 

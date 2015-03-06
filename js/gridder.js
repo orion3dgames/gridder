@@ -1,6 +1,6 @@
 /*!
  * GRIDDER V1 (http://www.oriongunning.com/)
- * Version 1.2
+ * Version 1.3
  * This work is licensed under a Creative Commons Attribution 3.0 Unported License. 
  */
 
@@ -15,12 +15,6 @@
         
         /* GET DEFAULT OPTIONS OR USE THE ONE PASSED IN THE FUNCTION  */
         var opts = $.extend( {}, $.fn.gridderExpander.defaults, options );      
-        
-        /* SET LOCAL VARS */
-        var animationSpeed = opts.animationSpeed;
-        var animationEasing = opts.animationEasing;
-        var scrollTo = opts.scrollTo;
-        var scrollOffset = opts.scrollOffset;
 
         return this.each(function() {
             
@@ -46,8 +40,8 @@
                 visible = false;
                 base.find('.selectedItem').removeClass('selectedItem');
                 
-                base.find('.padding').fadeOut(100, animationEasing, function() {
-                    base.find('.gridder-show').slideUp(animationSpeed, animationEasing, function() {
+                base.find('.padding').fadeOut(100, opts.animationEasing, function() {
+                    base.find('.gridder-show').slideUp(opts.animationSpeed, opts.animationEasing, function() {
                         base.find('.gridder-show').remove();
                         opts.onClosed(base);
                     });
@@ -77,10 +71,10 @@
  
                 /* SCROLL TO CORRECT POSITION FIRST */
                 $('html, body').animate({
-                    scrollTop: (scrollTo === "panel" ? myself.offset().top + myself.height() - scrollOffset : myself.offset().top - scrollOffset )
+                    scrollTop: (opts.scrollTo === "panel" ? myself.offset().top + myself.height() - opts.scrollOffset : myself.offset().top - opts.scrollOffset )
                 }, {
-                    duration: animationSpeed,
-                    easing: animationEasing
+                    duration: opts.animationSpeed,
+                    easing: opts.animationEasing
                 });                                
                 
                 /* ADD LOADING BLOC */
@@ -98,9 +92,10 @@
                     htmlcontent += "<div class=\"content\">"+ currentcontent+"</div>";
                 htmlcontent += "</div>";
                 mybloc.html(htmlcontent);
-
+                
+                // IF EXPANDER IS ALREADY EXPANDED 
                 if (!visible) {
-                    mybloc.find('.padding').slideDown(animationSpeed, animationEasing, function() {
+                    mybloc.find('.padding').slideDown(opts.animationSpeed, opts.animationEasing, function() {
                         visible = true;
                         
                         mybloc.css("height", mybloc.height());
@@ -109,7 +104,7 @@
                         opts.onExpanded(_this);
                     });
                 } else {
-                    mybloc.find('.padding').fadeIn(animationSpeed, animationEasing, function() {
+                    mybloc.find('.padding').fadeIn(opts.animationSpeed, opts.animationEasing, function() {
                         visible = true;
                         
                         mybloc.css("height", mybloc.height());
@@ -117,8 +112,7 @@
                         /* CHANGED CALLBACK */
                         opts.onChanged(_this);
                     });
-                }
-                
+                }            
             });
             
             /* NEXT BUTTON */
