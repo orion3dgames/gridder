@@ -45,11 +45,12 @@
                 // REMOVES GRIDDER EXPAND AREA
                 visible = false;
                 base.find('.selectedItem').removeClass('selectedItem');
-                base.find('.padding').slideUp(animationSpeed, animationEasing, function() {
-                    base.find('.gridder-show').remove();
-                    
-                    // CLOSE CALLBACK 
-                    opts.onClosed(base);
+                
+                base.find('.padding').fadeOut(100, animationEasing, function() {
+                    base.find('.gridder-show').slideUp(animationSpeed, animationEasing, function() {
+                        base.find('.gridder-show').remove();
+                        opts.onClosed(base);
+                    });
                 });
             }
             
@@ -102,12 +103,16 @@
                     mybloc.find('.padding').slideDown(animationSpeed, animationEasing, function() {
                         visible = true;
                         
+                        mybloc.css("height", mybloc.height());
+                        
                         /* AFTER EXPAND CALLBACK */
                         opts.onExpanded(_this);
                     });
                 } else {
                     mybloc.find('.padding').fadeIn(animationSpeed, animationEasing, function() {
                         visible = true;
+                        
+                        mybloc.css("height", mybloc.height());
                         
                         /* CHANGED CALLBACK */
                         opts.onChanged(_this);
