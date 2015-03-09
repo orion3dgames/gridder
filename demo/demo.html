@@ -4,8 +4,8 @@
     <head>
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href='http://fonts.googleapis.com/css?family=Armata' rel='stylesheet' type='text/css'> 
-        <link href="css/gridder.css" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Armata" rel="stylesheet" type="text/css"> 
+        <link href="../dist/css/jquery.gridder.min.css" rel="stylesheet">
         <link href="css/demo.css" rel="stylesheet">
     </head>
     <body>
@@ -517,26 +517,26 @@
         </div>
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="js/gridder.js"></script>
+        <script src="../dist/js/jquery.gridder.min.js"></script>
         <script>
             jQuery(function($) {
                 // Call Gridder
-                $('.gridder').gridderExpander({
+                $(".gridder").gridderExpander({
                     scrollOffset: 30,
-                    scrollTo: 'panel', // 'panel' or 'listitem'
+                    scrollTo: "panel", // "panel" or "listitem"
                     animationSpeed: 400,
                     animationEasing: "easeInOutExpo",
                     onStart: function(){
-                        console.log('Gridder Inititialized');
+                        console.log("Gridder Inititialized");
                     },
                     onExpanded: function(){
-                        console.log('Gridder Expanded');
+                        console.log("Gridder Expanded");
                     },
                     onChanged: function(){
-                        console.log('Gridder Changed');
+                        console.log("Gridder Changed");
                     },
                     onClosed: function(){
-                        console.log('Gridder Closed');
+                        console.log("Gridder Closed");
                     }
                 });
             });

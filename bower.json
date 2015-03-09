@@ -1,0 +1,18 @@
+{
+	"name": "jquery-gridder",
+	"version": "1.3.0",
+	"homepage": "http://www.oriongunning.com/blog/thumbnail-grid-expanding-preview/",
+	"authors": [
+		"Orion Gunning <orion.gunning@gmail.com>"
+	],
+	"description": "A jQuery plugin that displays a thumbnail grid expanding preview similar to the effect seen on Google Images.",
+	"main": "src/jquery.gridder.js",
+	"keywords": [
+		"jquery",
+		"plugin",
+		"thumbnail",
+		"expanding",
+		"grid"
+	],
+	"license": "MIT"
+}

@@ -1,4 +1,97 @@
-/* GRIDDER CSS */
+body {
+    font-family: 'Armata', sans-serif;
+    padding: 0px; 
+    margin: 0px;
+    background: #181817;
+    color: #FFF;
+}
+
+.container{
+    padding-bottom: 1000px;
+}
+
+img {
+    width:100%;
+    max-width: 100%; 
+}
+
+h1 { 
+    text-align: center; 
+}
+.headline { 
+    text-align: center;
+}
+
+.gridder{
+    &.hasSelectedItem .gridder-list { 
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); 
+        opacity: 0.5; 
+    }
+    &.hasSelectedItem .gridder-list.selectedItem { 
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); 
+        opacity: 100; 
+    }
+}
+
+.gridder-list{
+    .gridder-thumb{
+        cursor: pointer;
+    }
+    .title {
+        display: block;
+        font-weight: bold; 
+        color: #FFF; 
+        font-size: 14px; 
+    }
+    .description { 
+        color: #575757;
+        min-height: 30px; 
+        font-size: 12px; 
+    }
+}
+    
+.gridder-show{
+    padding: 50px; 
+    margin-bottom: 20px; 
+    background: #242424; 
+    
+    -webkit-box-shadow: inset 0px 0px 20px 5px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: inset 0px 0px 20px 5px rgba(0, 0, 0, 0.16);
+    box-shadow: inset 0px 0px 20px 5px rgba(0, 0, 0, 0.16); 
+}
+
+.gridder-navigation{
+    position: absolute;
+    right: 50px;
+    top: 25px;
+    
+    a{
+        color: #FFF;
+        display: inline-block;
+        background: #4A4A4A;
+        border-radius: 5px;
+        margin-left: 5px;
+        padding: 5px;
+        font-size: 12px;
+        text-transform: uppercase;
+        
+        &:hover{
+            text-decoration: none;
+            background: #CCC;
+        }
+    }
+}
+
+.gridder-expanded-content{
+    p{
+        font-family: 'Arial', sans-serif;
+        font-size: 14px;
+        line-height: 150%;
+        color: #8E8C8C;
+    }
+}
+
+/*
 .gridder { width: 100%; margin: 0 auto; font-size: 0; }
 .gridder-list { display: inline-block; *display: inline; white-space-collapsing: discard; zoom: 1; width: 24%; margin-left: 1.3%; margin-bottom: 1%; background: #f3f3f3; cursor: pointer; position: relative; }
 .gridder-list .gridder-thumb { display: block; }
@@ -27,4 +120,6 @@
 .gridder-nav.prev { opacity: 0.7; cursor: pointer; position: absolute; top: 50px; left: 10px; background: url("../images/prev.png") no-repeat center center; width: 40px; height: 99px; }
 .gridder-nav.next { opacity: 0.7; cursor: pointer; position: absolute; top: 50px; right: 10px; background: url("../images/next.png") no-repeat center center; width: 40px; height: 99px; }
 .gridder-prev:hover { opacity: 1; }
+
+*/
 
