@@ -6,8 +6,6 @@ We have all searched images on Google, so you probably noticed the interesting e
 
 Live demo GRIDDER v1.3.0 : http://www.oriongunning.com/demo/gridder/demo.html
 
-## Please Note
-
 =======
 
 ## NEW Live demo with GRIDDER v2 
