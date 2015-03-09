@@ -10,7 +10,7 @@ Live demo GRIDDER v1.3.0 : http://www.oriongunning.com/demo/gridder
 
 ## NEW Live demo with GRIDDER v2 
 
-Live demo GRIDDER v2 : http://www.oriongunning.com/demo/gridder-ajax/demo.html
+Live demo GRIDDER v2 : http://www.oriongunning.com/demo/gridder-ajax/demo.php
 - Github link for V2 : https://github.com/oriongunning/gridder-ajax
  
 =======
