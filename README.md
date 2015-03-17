@@ -71,8 +71,8 @@ Live demo GRIDDER v2 : http://www.oriongunning.com/demo/gridder-ajax/demo.php
     <script>
     $(function() {
 
-            // Call Gridder
-            $('.gridder').Gridder({
+        // Call Gridder
+        $('.gridder').Gridder({
             scrollOffset: 30,
             scrollTo: 'panel', // panel or listitem
             animationSpeed: 400,
