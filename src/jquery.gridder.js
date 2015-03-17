@@ -44,6 +44,7 @@
             
             /* CLICK EVENT */
             _this.find(".gridder-list").on("click", function(e) {
+                
                 e.stopPropagation(); 
                 
                 var myself = $(this);
@@ -82,7 +83,7 @@
                 mybloc = $htmlcontent.insertAfter(myself);
                 
                 /* EXPANDED OUTPUT */
-                var currentcontent = myself.find(".gridder-content").html();
+                var currentcontent = $(myself.data("griddercontent")).html();
                 var htmlcontent = "<div class=\"gridder-padding\">";
                          htmlcontent += "<div class=\"gridder-navigation\">";
                                 htmlcontent += "<a href=\"#\" class=\"gridder-close\">Close</a>";

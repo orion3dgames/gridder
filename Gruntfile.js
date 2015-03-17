@@ -73,7 +73,7 @@ module.exports = function(grunt) {
 		// Better than calling grunt a million times
 		// (call 'grunt watch')
 		watch: {
-		    files: ['src/*','scss/*','demo/scss/*'],
+		    files: ['src/*','scss/*'],
 		    tasks: ['default']
 		}
 

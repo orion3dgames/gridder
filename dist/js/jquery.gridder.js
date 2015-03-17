@@ -1,5 +1,5 @@
 /*
- *  Gridder V1 - v1.3.0
+ *  Gridder - v1.3.0
  *  A jQuery plugin that displays a thumbnail grid expanding preview similar to the effect seen on Google Images.
  *  http://www.oriongunning.com/
  *
@@ -52,6 +52,7 @@
             
             /* CLICK EVENT */
             _this.find(".gridder-list").on("click", function(e) {
+                
                 e.stopPropagation(); 
                 
                 var myself = $(this);
@@ -90,7 +91,7 @@
                 mybloc = $htmlcontent.insertAfter(myself);
                 
                 /* EXPANDED OUTPUT */
-                var currentcontent = myself.find(".gridder-content").html();
+                var currentcontent = $(myself.data("griddercontent")).html();
                 var htmlcontent = "<div class=\"gridder-padding\">";
                          htmlcontent += "<div class=\"gridder-navigation\">";
                                 htmlcontent += "<a href=\"#\" class=\"gridder-close\">Close</a>";
