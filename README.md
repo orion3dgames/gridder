@@ -47,9 +47,15 @@ Live demo GRIDDER v2 : http://www.oriongunning.com/demo/gridder-ajax/demo.php
     
     <!-- Gridder navigation -->
 	<ul class="gridder">
-        <li data-griddercontent="#content1"><img src="http://placehold.it/600x400" /> Item 1</li>
-        <li data-griddercontent="#content2"><img src="http://placehold.it/600x400" /> Item 2</li>
-        <li data-griddercontent="#content3"><img src="http://placehold.it/600x400" /> Item 3</li>
+        <li data-griddercontent="#content1">
+            <img src="http://placehold.it/600x400" />
+        </li>
+        <li data-griddercontent="#content2">
+            <img src="http://placehold.it/600x400" />
+        </li>
+        <li data-griddercontent="#content3">
+            <img src="http://placehold.it/600x400" />
+        </li>
     </ul>
 
     <!-- Gridder content -->
