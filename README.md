@@ -47,13 +47,13 @@ Live demo GRIDDER v2 : http://www.oriongunning.com/demo/gridder-ajax/demo.php
     
     <!-- Gridder navigation -->
 	<ul class="gridder">
-        <li data-griddercontent="#content1">
+        <li class="gridder-list" data-griddercontent="#content1">
             <img src="http://placehold.it/600x400" />
         </li>
-        <li data-griddercontent="#content2">
+        <li class="gridder-list" data-griddercontent="#content2">
             <img src="http://placehold.it/600x400" />
         </li>
-        <li data-griddercontent="#content3">
+        <li class="gridder-list" data-griddercontent="#content3">
             <img src="http://placehold.it/600x400" />
         </li>
     </ul>
@@ -72,7 +72,7 @@ Live demo GRIDDER v2 : http://www.oriongunning.com/demo/gridder-ajax/demo.php
     $(function() {
 
         // Call Gridder
-        $('.gridder').Gridder({
+        $('.gridder').gridderExpander({
             scrollOffset: 30,
             scrollTo: 'panel', // panel or listitem
             animationSpeed: 400,

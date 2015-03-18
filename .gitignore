@@ -2,5 +2,4 @@ nbproject/
 .DS_Store
 node_modules
 .sass-cache/
-demo.php
 npm-debug.log
