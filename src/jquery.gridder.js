@@ -23,12 +23,14 @@
             function closeExpander(base, settings) {
                 
                 // SCROLL TO CORRECT POSITION FIRST
-                $("html, body").animate({
-                    scrollTop: base.find(".selectedItem").offset().top - settings.scrollOffset
-                }, {
-                    duration: 200,
-                    easing: settings.animationEasing
-                });
+                if(settings.scroll){
+                    $("html, body").animate({
+                        scrollTop: base.find(".selectedItem").offset().top - settings.scrollOffset
+                    }, {
+                        duration: 200,
+                        easing: settings.animationEasing
+                    });
+                }
                 
                 _this.removeClass("hasSelectedItem");
 
