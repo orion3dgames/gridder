@@ -56,24 +56,24 @@ module.exports = function(grunt) {
 			}
 		},
                 
-                // SASS
-                sass: {
-                    dist: {
-                        options: {
-                            style: 'compressed'
-                        },
-                        files: {
-                            'dist/css/jquery.gridder.min.css': 'scss/jquery.gridder.scss',
-                            'demo/css/demo.css': 'demo/scss/demo.scss'
-                        }
-                    }
+        // SASS
+        sass: {
+            dist: {
+                options: {
+                    style: 'compressed'
                 },
+                files: {
+                    'dist/css/jquery.gridder.min.css': 'scss/jquery.gridder.scss',
+                    'demo/css/demo.css': 'demo/scss/demo.scss'
+                }
+            }
+        },
 
 		// watch for changes to source
 		// Better than calling grunt a million times
 		// (call 'grunt watch')
 		watch: {
-		    files: ['src/*','scss/*'],
+		    files: ['src/*','scss/*','demo/scss/*'],
 		    tasks: ['default']
 		}
 
