@@ -16,10 +16,10 @@
             var _this = $(this);
             var visible = false;
             
-            /* START CALLBACK */
+            // START CALLBACK
             settings.onStart(_this);
             
-            // Close Function
+            // CLOSE FUNCTION
             function closeExpander(base, settings) {
                 
                 // SCROLL TO CORRECT POSITION FIRST
@@ -30,7 +30,7 @@
                     easing: settings.animationEasing
                 });
                 
-                 _this.removeClass("hasSelectedItem");
+                _this.removeClass("hasSelectedItem");
 
                 // REMOVES GRIDDER EXPAND AREA
                 visible = false;
@@ -63,13 +63,15 @@
                 _this.find(".gridder-show").remove(); 
                 
                 /* SCROLL TO CORRECT POSITION FIRST */
-                var offset = (settings.scrollTo === "panel" ? myself.offset().top + myself.height() - settings.scrollOffset : myself.offset().top - settings.scrollOffset );               
-                $("html, body").animate({
-                    scrollTop: offset
-                }, {
-                    duration: settings.animationSpeed,
-                    easing: settings.animationEasing
-                });
+                if(settings.scroll){
+                    var offset = (settings.scrollTo === "panel" ? myself.offset().top + myself.height() - settings.scrollOffset : myself.offset().top - settings.scrollOffset );               
+                    $("html, body").animate({
+                        scrollTop: offset
+                    }, {
+                        duration: settings.animationSpeed,
+                        easing: settings.animationEasing
+                    });
+                }
                 
                 /* ADD CLASS TO THE GRIDDER CONTAINER
                  * So you can apply global style when item selected. 
@@ -102,8 +104,8 @@
                         visible = true;
 
                         /* AFTER EXPAND CALLBACK */
-                        if ( $.isFunction( settings.onExpanded ) ) {
-                            settings.onExpanded( mybloc );
+                        if ( $.isFunction( settings.onContent ) ) {
+                            settings.onContent( mybloc );
                         }
                     });
                 } else {
@@ -111,8 +113,8 @@
                         visible = true;
 
                         /* CHANGED CALLBACK */
-                        if ( $.isFunction( settings.onChanged ) ) {
-                            settings.onChanged( mybloc );
+                        if ( $.isFunction( settings.onContent ) ) {
+                            settings.onContent( mybloc );
                         }
                     });
                 }            
@@ -141,6 +143,7 @@
     
     // Default Options
     $.fn.gridderExpander.defaults = {
+        scroll: true,
         scrollOffset: 30,
         scrollTo: "panel", // panel or listitem
         animationSpeed: 400,
@@ -148,11 +151,8 @@
         onStart: function(){
             console.log("Gridder Inititialized");
         },
-        onExpanded: function(){
-            console.log("Gridder Expanded");
-        },
-        onChanged: function(){
-            console.log("Gridder Changed");
+        onContent: function(){
+            console.log("Gridder Content Loaded");
         },
         onClosed: function(){
             console.log("Gridder Closed");
