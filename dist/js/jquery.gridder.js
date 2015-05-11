@@ -6,8 +6,30 @@
  *  Made by Orion Gunning
  *  Under MIT License
  */
+// Avoid `console` errors in browsers that lack a console.
+(function() {
+    var method;
+    var noop = function () {};
+    var methods = [
+        "assert", "clear", "count", "debug", "dir", "dirxml", "error",
+        "exception", "group", "groupCollapsed", "groupEnd", "info", "log",
+        "markTimeline", "profile", "profileEnd", "table", "time", "timeEnd",
+        "timeStamp", "trace", "warn"
+    ];
+    var length = methods.length;
+    var console = (window.console = window.console || {});
+
+    while (length--) {
+        method = methods[length];
+
+        // Only stub undefined methods.
+        if (!console[method]) {
+            console[method] = noop;
+        }
+    }
+}());
+
 ;(function($) {
-    
     /* CUSTOM EASING */
     $.fn.extend($.easing,{
         def:"easeInOutExpo", easeInOutExpo:function(e,f,a,h,g){if(f===0){return a;}if(f===g){return a+h;}if((f/=g/2)<1){return h/2*Math.pow(2,10*(f-1))+a;}return h/2*(-Math.pow(2,-10*--f)+2)+a;}
