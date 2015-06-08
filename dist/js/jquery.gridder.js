@@ -75,28 +75,74 @@
             }
             
             /* CLICK EVENT */
-            _this.find(".gridder-list").on("click", function(e) {
-                
-                e.stopPropagation(); 
-                
+            _this.find(".gridder-list").on("click", function (e) {
+
+                e.stopPropagation();
+
                 var myself = $(this);
-                
+
                 /* ENSURES THE CORRECT BLOC IS ACTIVE */
                 if (!myself.hasClass("selectedItem")) {
                     _this.find(".selectedItem").removeClass("selectedItem");
                     myself.addClass("selectedItem");
-                }else{
+                } else {
                     // THE SAME IS ALREADY OPEN, LET"S CLOSE IT
                     closeExpander(_this, settings);
                     return;
                 }
-                
+
                 /* REMOVES PREVIOUS BLOC */
-                _this.find(".gridder-show").remove(); 
-                
+                _this.find(".gridder-show").remove();
+
+
+                /* ADD CLASS TO THE GRIDDER CONTAINER
+                 * So you can apply global style when item selected. 
+                 */
+                if (!_this.hasClass("hasSelectedItem")) {
+                    _this.addClass("hasSelectedItem");
+                }
+
+                /* ADD LOADING BLOC */
+                var $htmlcontent = $("<div class=\"gridder-show loading\"></div>");
+                mybloc = $htmlcontent.insertAfter(myself);
+
+                /* EXPANDED OUTPUT */
+                var currentcontent = $(myself.data("griddercontent")).html();
+                var htmlcontent = "<div class=\"gridder-padding\">";
+                htmlcontent += "<div class=\"gridder-navigation\">";
+                htmlcontent += "<a href=\"#\" class=\"gridder-close\"><i class=\"fa fa-angle-right\" style=\"position: relative; left: 3px\"></i><i class=\"fa fa-angle-left\"></i></a>";
+                htmlcontent += "<a href=\"#\" class=\"gridder-nav prev\"><i class=\"fa fa-angle-left\"></i></a>";
+                htmlcontent += "<a href=\"#\" class=\"gridder-nav next\"><i class=\"fa fa-angle-right\"></i></a>";
+                htmlcontent += "</div>";
+                htmlcontent += "<div class=\"gridder-expanded-content\">";
+                htmlcontent += currentcontent;
+                htmlcontent += "</div>";
+                htmlcontent += "</div>";
+                //mybloc.html(htmlcontent);
+
+                // IF EXPANDER IS ALREADY EXPANDED 
+                if (!visible) {
+                    mybloc.hide().append(htmlcontent).slideDown(settings.animationSpeed, settings.animationEasing, function () {
+                        visible = true;
+                        /* AFTER EXPAND CALLBACK */
+                        if ($.isFunction(settings.onContent)) {
+                            settings.onContent(mybloc);
+                        }
+                    });
+                } else {
+                    mybloc.html(htmlcontent);
+                    mybloc.find(".gridder-padding").fadeIn(settings.animationSpeed, settings.animationEasing, function () {
+                        visible = true;
+                        /* CHANGED CALLBACK */
+                        if ($.isFunction(settings.onContent)) {
+                            settings.onContent(mybloc);
+                        }
+                    });
+                }
+
                 /* SCROLL TO CORRECT POSITION FIRST */
-                if(settings.scroll){
-                    var offset = (settings.scrollTo === "panel" ? myself.offset().top + myself.height() - settings.scrollOffset : myself.offset().top - settings.scrollOffset );               
+                if (settings.scroll) {
+                    var offset = (settings.scrollTo === "panel" ? myself.offset().top + myself.height() - settings.scrollOffset : myself.offset().top - settings.scrollOffset);
                     $("html, body").animate({
                         scrollTop: offset
                     }, {
@@ -104,52 +150,6 @@
                         easing: settings.animationEasing
                     });
                 }
-                
-                /* ADD CLASS TO THE GRIDDER CONTAINER
-                 * So you can apply global style when item selected. 
-                 */
-                if (!_this.hasClass("hasSelectedItem")) {
-                    _this.addClass("hasSelectedItem");
-                }
- 
-                /* ADD LOADING BLOC */
-                var $htmlcontent = $("<div class=\"gridder-show loading\"></div>");
-                mybloc = $htmlcontent.insertAfter(myself);
-                
-                /* EXPANDED OUTPUT */
-                var currentcontent = $(myself.data("griddercontent")).html();
-                var htmlcontent = "<div class=\"gridder-padding\">";
-                         htmlcontent += "<div class=\"gridder-navigation\">";
-                                htmlcontent += "<a href=\"#\" class=\"gridder-close\">Close</a>";
-                                htmlcontent += "<a href=\"#\" class=\"gridder-nav prev\">Previous</a>";
-                                htmlcontent += "<a href=\"#\" class=\"gridder-nav next\">Next</a>";
-                        htmlcontent += "</div>";
-                        htmlcontent += "<div class=\"gridder-expanded-content\">";
-                            htmlcontent += currentcontent;
-                        htmlcontent += "</div>";
-                htmlcontent += "</div>";
-                mybloc.html(htmlcontent);
-
-                // IF EXPANDER IS ALREADY EXPANDED 
-                if (!visible) {
-                    mybloc.find(".gridder-padding").slideDown(settings.animationSpeed, settings.animationEasing, function() {
-                        visible = true;
-
-                        /* AFTER EXPAND CALLBACK */
-                        if ( $.isFunction( settings.onContent ) ) {
-                            settings.onContent( mybloc );
-                        }
-                    });
-                } else {
-                    mybloc.find(".gridder-padding").fadeIn(settings.animationSpeed, settings.animationEasing, function() {
-                        visible = true;
-
-                        /* CHANGED CALLBACK */
-                        if ( $.isFunction( settings.onContent ) ) {
-                            settings.onContent( mybloc );
-                        }
-                    });
-                }            
             });
             
             /* NEXT BUTTON */
