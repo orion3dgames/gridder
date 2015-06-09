@@ -24,7 +24,6 @@
 				<?php for ($i = 0; $i < 14; $i++): ?>
 					<li class="gridder-list" data-griddercontent="#gridder-content-<?php echo $i; ?>">
 						<img src="http://placehold.it/200x200&text=Item <?php echo $i; ?>" class="img-responsive" />
-
 				<?php endfor; ?>
 			</ul>
 
@@ -74,9 +73,28 @@
 			<?php endfor; ?>
 		</div>
 
+		<div class="container">
+            <h1>Ajax example</h1>
+		</div>
+
+		<div class="container">
+
+			<pre>
+
+			</pre>
+
+			<ul class="gridder">
+				<?php for ($i = 0; $i < 14; $i++): ?>
+					<li class="gridder-list" data-griddercontent="#gridder-content-<?php echo $i; ?>" data-id="<?php echo $i; ?>">
+						<img src="http://placehold.it/200x200&text=Item <?php echo $i; ?>" class="img-responsive" />
+				<?php endfor; ?>
+			</ul>
+
+		</div>
+
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-        <script src="../dist/js/jquery.gridder.js"></script>
+        <script src="../src/jquery.gridder.js"></script>
         <script>
             jQuery(document).ready(function ($) {
 

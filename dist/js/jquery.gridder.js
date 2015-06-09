@@ -30,6 +30,7 @@
 }());
 
 ;(function($) {
+    
     /* CUSTOM EASING */
     $.fn.extend($.easing,{
         def:"easeInOutExpo", easeInOutExpo:function(e,f,a,h,g){if(f===0){return a;}if(f===g){return a+h;}if((f/=g/2)<1){return h/2*Math.pow(2,10*(f-1))+a;}return h/2*(-Math.pow(2,-10*--f)+2)+a;}
@@ -74,13 +75,9 @@
                 });
             }
             
-            /* CLICK EVENT */
-            _this.find(".gridder-list").on("click", function (e) {
-
-                e.stopPropagation();
-
-                var myself = $(this);
-
+            // OPEN EXPANDER
+            function openExpander(myself, settings) {
+                
                 /* ENSURES THE CORRECT BLOC IS ACTIVE */
                 if (!myself.hasClass("selectedItem")) {
                     _this.find(".selectedItem").removeClass("selectedItem");
@@ -142,7 +139,7 @@
                     });
                 }
 
-                /* SCROLL TO CORRECT POSITION FIRST */
+                /* SCROLL TO CORRECT POSITION AFTER */
                 if (settings.scroll) {
                     var offset = (settings.scrollTo === "panel" ? myself.offset().top + myself.height() - settings.scrollOffset : myself.offset().top - settings.scrollOffset);
                     $("html, body").animate({
@@ -152,6 +149,18 @@
                         easing: settings.animationEasing
                     });
                 }
+            }
+            
+            /* IF HTML5 PUSHSTATE */
+            if(settings.html5pushstate){
+                
+            }
+            
+            /* CLICK EVENT */
+            _this.find(".gridder-list").on("click", function (e) {
+                e.stopPropagation();
+                var myself = $(this);
+                openExpander(myself, settings);
             });
             
             /* NEXT BUTTON */
@@ -186,6 +195,7 @@
         nextText: "Next",
         prevText: "Previous",
         closeText: "Close",
+        html5pushstate: true,     
         onStart: function(){
             console.log("Gridder Inititialized");
         },
