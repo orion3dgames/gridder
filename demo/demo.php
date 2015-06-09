@@ -19,7 +19,7 @@
 		</div>
 
 		<div class="container">
-			
+
 			<ul class="gridder">
 				<?php for ($i = 0; $i < 14; $i++): ?>
 					<li class="gridder-list" data-griddercontent="#gridder-content-<?php echo $i; ?>">
@@ -86,6 +86,10 @@
                     scrollTo: "panel", // "panel" or "listitem"
                     animationSpeed: 400,
                     animationEasing: "easeInOutExpo",
+					showNav: true,
+					nextText: "Next",
+					prevText: "Previous",
+					closeText: "Close",
                     onStart: function () {
                         console.log("Gridder Inititialized");
                     },

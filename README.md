@@ -76,9 +76,13 @@ Live demo GRIDDER v2 : http://www.oriongunning.com/demo/gridder-ajax/demo.php
         $('.gridder').gridderExpander({
             scroll: true,
             scrollOffset: 30,
-            scrollTo: "panel", // panel or listitem
+            scrollTo: "panel",                  // panel or listitem
             animationSpeed: 400,
             animationEasing: "easeInOutExpo",
+            showNav: true,                      // Show Navigation
+            nextText: "Next",                   // Next button text
+            prevText: "Previous",               // Previous button text
+            closeText: "Close",                 // Close button text
             onStart: function(){
                 console.log("Gridder Inititialized");
             },

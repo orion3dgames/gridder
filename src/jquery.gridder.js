@@ -101,11 +101,13 @@
                 /* EXPANDED OUTPUT */
                 var currentcontent = $(myself.data("griddercontent")).html();
                 var htmlcontent = "<div class=\"gridder-padding\">";
-                htmlcontent += "<div class=\"gridder-navigation\">";
-                htmlcontent += "<a href=\"#\" class=\"gridder-close\"><i class=\"fa fa-angle-right\" style=\"position: relative; left: 3px\"></i><i class=\"fa fa-angle-left\"></i></a>";
-                htmlcontent += "<a href=\"#\" class=\"gridder-nav prev\"><i class=\"fa fa-angle-left\"></i></a>";
-                htmlcontent += "<a href=\"#\" class=\"gridder-nav next\"><i class=\"fa fa-angle-right\"></i></a>";
-                htmlcontent += "</div>";
+                if(settings.showNav){
+                    htmlcontent += "<div class=\"gridder-navigation\">";
+                    htmlcontent += "<a href=\"#\" class=\"gridder-close\">"+settings.closeText+"</a>";
+                    htmlcontent += "<a href=\"#\" class=\"gridder-nav prev\">"+settings.prevText+"</a>";
+                    htmlcontent += "<a href=\"#\" class=\"gridder-nav next\">"+settings.nextText+"</a>";
+                    htmlcontent += "</div>";
+                }            
                 htmlcontent += "<div class=\"gridder-expanded-content\">";
                 htmlcontent += currentcontent;
                 htmlcontent += "</div>";
@@ -172,6 +174,10 @@
         scrollTo: "panel", // panel or listitem
         animationSpeed: 400,
         animationEasing: "easeInOutExpo",
+        showNav: true,
+        nextText: "Next",
+        prevText: "Previous",
+        closeText: "Close",
         onStart: function(){
             console.log("Gridder Inititialized");
         },
