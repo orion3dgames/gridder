@@ -43,7 +43,7 @@
             settings.onStart(_this);
             
             // CLOSE FUNCTION
-            function closeExpander(base, settings) {
+            function closeExpander(base) {
                 
                 // SCROLL TO CORRECT POSITION FIRST
                 if(settings.scroll){
@@ -68,7 +68,7 @@
             }
             
             // OPEN EXPANDER
-            function openExpander(myself, settings) {
+            function openExpander(myself) {
                 
                 /* ENSURES THE CORRECT BLOC IS ACTIVE */
                 if (!myself.hasClass("selectedItem")) {
@@ -94,9 +94,28 @@
                 /* ADD LOADING BLOC */
                 var $htmlcontent = $("<div class=\"gridder-show loading\"></div>");
                 mybloc = $htmlcontent.insertAfter(myself);
-
-                /* EXPANDED OUTPUT */
-                var currentcontent = $(myself.data("griddercontent")).html();
+                
+                /* GET CONTENT VIA AJAX OR #ID*/
+                var thecontent = "";
+                if(settings.ajax){
+                    $.ajax({
+                        type: "POST",
+                        url: myself.data("griddercontent"),
+                        success: function(data) {
+                            thecontent = data;
+                            processContent(myself, thecontent);
+                        }
+                    });
+                }else{
+                    thecontent = $(myself.data("griddercontent")).html();
+                    processContent(myself, thecontent);
+                }
+            }
+            
+            // PROCESS CONTENT
+            function processContent(myself, thecontent){
+                
+                /* FORMAT OUTPUT */   
                 var htmlcontent = "<div class=\"gridder-padding\">";
                 if(settings.showNav){
                     htmlcontent += "<div class=\"gridder-navigation\">";
@@ -106,10 +125,9 @@
                     htmlcontent += "</div>";
                 }            
                 htmlcontent += "<div class=\"gridder-expanded-content\">";
-                htmlcontent += currentcontent;
+                htmlcontent += thecontent;
                 htmlcontent += "</div>";
                 htmlcontent += "</div>";
-                //mybloc.html(htmlcontent);
 
                 // IF EXPANDER IS ALREADY EXPANDED 
                 if (!visible) {
@@ -141,32 +159,16 @@
                         easing: settings.animationEasing
                     });
                 }
-            }
-            
-            /* IF HTML5 PUSHSTATE */
-            if(settings.html5pushstate){
-                $(document).on("popstate", _this, function(event) {
-                    var state = event.originalEvent.state;
-                    console.log(state);
-                });
+                
+                /* REMOVE LOADING CLASS */
+                mybloc.removeClass("loading");
             }
             
             /* CLICK EVENT */
             _this.find(".gridder-list").on("click", function (e) {
-                e.stopPropagation();
+                e.preventDefault();
                 var myself = $(this);
-                
-                if(settings.html5pushstate){
-                    console.log("Load AJAX Content");
-                    
-                    var id = myself.data("id");
-                    var url = "?item="+id;
-                    
-                    history.pushState("Item "+id, null, url);
-                }else{
-                    console.log("Load Static Content");
-                    openExpander(myself, settings);
-                } 
+                openExpander(myself);
             });
             
             /* NEXT BUTTON */
@@ -184,7 +186,7 @@
             /* CLOSE BUTTON */
             _this.on("click", ".gridder-close", function(e) {
                 e.preventDefault();
-                closeExpander(_this, settings);
+                closeExpander(_this);
             });
 
         });
@@ -201,7 +203,7 @@
         nextText: "Next",
         prevText: "Previous",
         closeText: "Close",
-        html5pushstate: false,     
+        ajax: false,     
         onStart: function(){
             console.log("Gridder Inititialized");
         },

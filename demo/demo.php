@@ -80,10 +80,20 @@
 		<div class="container">
 
 			<ul class="gridder gridder-ajax">
-				<?php for ($i = 0; $i < 14; $i++): ?>
-					<li class="gridder-list" data-griddercontent="#gridder-content-<?php echo $i; ?>" data-id="<?php echo $i; ?>">
-						<img src="http://placehold.it/200x200&text=Item <?php echo $i; ?>" class="img-responsive" />
-				<?php endfor; ?>
+				<li class="gridder-list" data-griddercontent="http://api.oriongunning.com/wp/?p=52">
+					<img src="http://placehold.it/200x200" class="img-responsive" />
+				<li class="gridder-list" data-griddercontent="http://api.oriongunning.com/wp/?p=50">
+					<img src="http://placehold.it/200x200" class="img-responsive" />
+				<li class="gridder-list" data-griddercontent="http://api.oriongunning.com/wp/?p=48">
+					<img src="http://placehold.it/200x200" class="img-responsive" />
+				<li class="gridder-list" data-griddercontent="http://api.oriongunning.com/wp/?p=46">
+					<img src="http://placehold.it/200x200" class="img-responsive" />
+				<li class="gridder-list" data-griddercontent="http://api.oriongunning.com/wp/?p=44">
+					<img src="http://placehold.it/200x200" class="img-responsive" />
+				<li class="gridder-list" data-griddercontent="http://api.oriongunning.com/wp/?p=42">
+					<img src="http://placehold.it/200x200" class="img-responsive" />
+				<li class="gridder-list" data-griddercontent="http://api.oriongunning.com/wp/?p=40">
+					<img src="http://placehold.it/200x200" class="img-responsive" />
 			</ul>
 
 		</div>
@@ -96,18 +106,20 @@
 
                 // Call Gridder
                 $(".gridder-static").gridderExpander({
-                    scrollOffset: 60,
-                    scrollTo: "panel", // "panel" or "listitem"
-                    animationSpeed: 400,
-                    animationEasing: "easeInOutExpo",
+                    scroll: true,
+					scrollOffset: 30,
+					scrollTo: "panel", // panel or listitem
+					animationSpeed: 400,
+					animationEasing: "easeInOutExpo",
 					showNav: true,
 					nextText: "Next",
 					prevText: "Previous",
 					closeText: "Close",
+					ajax: false,
                     onStart: function () {
                         console.log("Gridder Inititialized");
                     },
-                    onExpanded: function (object) {
+                    onContent: function(){
                         console.log("Gridder Expanded");
                         $(".carousel").carousel();
                     }
@@ -115,28 +127,26 @@
 
                 // Call Gridder
                 $(".gridder-ajax").gridderExpander({
-                    scrollOffset: 60,
-                    scrollTo: "panel", // "panel" or "listitem"
-                    animationSpeed: 400,
-                    animationEasing: "easeInOutExpo",
+                    scroll: true,
+					scrollOffset: 30,
+					scrollTo: "panel", // panel or listitem
+					animationSpeed: 400,
+					animationEasing: "easeInOutExpo",
 					showNav: true,
 					nextText: "Next",
 					prevText: "Previous",
 					closeText: "Close",
-					html5pushstate: true,
-                    onStart: function () {
-                        console.log("Gridder Inititialized");
-                    },
-                    onExpanded: function (object) {
-                        console.log("Gridder Expanded");
-                        $(".carousel").carousel();
-                    },
-                    onChanged: function (object) {
-                        console.log("Gridder Changed");
-                    },
-                    onClosed: function () {
-                        console.log("Gridder Closed");
-                    }
+					ajax: true,
+					onStart: function(){
+						console.log("Gridder Inititialized");
+					},
+					onContent: function(){
+						console.log("Gridder Content Loaded");
+						$(".carousel").carousel();
+					},
+					onClosed: function(){
+						console.log("Gridder Closed");
+					}
                 });
             });
         </script>

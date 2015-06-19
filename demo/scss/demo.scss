@@ -20,6 +20,11 @@ body{
     float: left;
     width: 100%;
     position: relative;
+    background: #EEE url('../images/loading-spin.svg') no-repeat center;
+    
+    &.loading{
+        background: #EEE url('../images/loading-spin.svg') no-repeat center;
+    }
 }
 .gridder-content{
     display: none;
