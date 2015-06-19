@@ -41,6 +41,15 @@ body{
     margin-bottom: 1%;
 }
 
+.gridder-navigation{
+    .gridder-nav{
+        &.disabled{
+            opacity: .5;
+        }
+    }
+}
+
+
 .gridder-list{
     cursor: pointer;
     &:hover{

@@ -114,16 +114,23 @@
             
             // PROCESS CONTENT
             function processContent(myself, thecontent){
-                
+
                 /* FORMAT OUTPUT */   
                 var htmlcontent = "<div class=\"gridder-padding\">";
+                
                 if(settings.showNav){
+                    
+                    /* CHECK IF PREV AND NEXT BUTTON HAVE ITEMS */
+                    var prevItem = ($(".selectedItem").prev());
+                    var nextItem = ($(".selectedItem").next().next());
+                    
                     htmlcontent += "<div class=\"gridder-navigation\">";
                     htmlcontent += "<a href=\"#\" class=\"gridder-close\">"+settings.closeText+"</a>";
-                    htmlcontent += "<a href=\"#\" class=\"gridder-nav prev\">"+settings.prevText+"</a>";
-                    htmlcontent += "<a href=\"#\" class=\"gridder-nav next\">"+settings.nextText+"</a>";
+                    htmlcontent += "<a href=\"#\" class=\"gridder-nav prev "+(!prevItem.length?"disabled":"")+"\">"+settings.prevText+"</a>";
+                    htmlcontent += "<a href=\"#\" class=\"gridder-nav next "+(!nextItem.length?"disabled":"")+"\">"+settings.nextText+"</a>";
                     htmlcontent += "</div>";
-                }            
+                }     
+                
                 htmlcontent += "<div class=\"gridder-expanded-content\">";
                 htmlcontent += thecontent;
                 htmlcontent += "</div>";
