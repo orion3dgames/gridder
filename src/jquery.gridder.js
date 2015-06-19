@@ -145,9 +145,9 @@
             
             /* IF HTML5 PUSHSTATE */
             if(settings.html5pushstate){
-                $(window).on("popstate", _this, function(event) {
+                $(document).on("popstate", _this, function(event) {
                     var state = event.originalEvent.state;
-                    console.log(event);
+                    console.log(state);
                 });
             }
             
@@ -157,14 +157,14 @@
                 var myself = $(this);
                 
                 if(settings.html5pushstate){
-                    console.log('Load AJAX Content');
+                    console.log("Load AJAX Content");
                     
-                    var id = myself.data('id');
-                    var url = '?item='+id;
+                    var id = myself.data("id");
+                    var url = "?item="+id;
                     
-                    history.pushState('Item '+id, null, url);
+                    history.pushState("Item "+id, null, url);
                 }else{
-                    console.log('Load Static Content');
+                    console.log("Load Static Content");
                     openExpander(myself, settings);
                 } 
             });
@@ -201,7 +201,7 @@
         nextText: "Next",
         prevText: "Previous",
         closeText: "Close",
-        html5pushstate: true,     
+        html5pushstate: false,     
         onStart: function(){
             console.log("Gridder Inititialized");
         },
@@ -212,5 +212,6 @@
             console.log("Gridder Closed");
         }
     };
+    
     
 })(jQuery);

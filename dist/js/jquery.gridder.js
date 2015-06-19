@@ -153,14 +153,28 @@
             
             /* IF HTML5 PUSHSTATE */
             if(settings.html5pushstate){
-                
+                $(document).on("popstate", _this, function(event) {
+                    var state = event.originalEvent.state;
+                    console.log(state);
+                });
             }
             
             /* CLICK EVENT */
             _this.find(".gridder-list").on("click", function (e) {
                 e.stopPropagation();
                 var myself = $(this);
-                openExpander(myself, settings);
+                
+                if(settings.html5pushstate){
+                    console.log("Load AJAX Content");
+                    
+                    var id = myself.data("id");
+                    var url = "?item="+id;
+                    
+                    history.pushState("Item "+id, null, url);
+                }else{
+                    console.log("Load Static Content");
+                    openExpander(myself, settings);
+                } 
             });
             
             /* NEXT BUTTON */
@@ -195,7 +209,7 @@
         nextText: "Next",
         prevText: "Previous",
         closeText: "Close",
-        html5pushstate: true,     
+        html5pushstate: false,     
         onStart: function(){
             console.log("Gridder Inititialized");
         },
@@ -206,5 +220,6 @@
             console.log("Gridder Closed");
         }
     };
+    
     
 })(jQuery);

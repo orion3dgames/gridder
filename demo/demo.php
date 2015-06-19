@@ -20,7 +20,7 @@
 
 		<div class="container">
 
-			<ul class="gridder">
+			<ul class="gridder gridder-static">
 				<?php for ($i = 0; $i < 14; $i++): ?>
 					<li class="gridder-list" data-griddercontent="#gridder-content-<?php echo $i; ?>">
 						<img src="http://placehold.it/200x200&text=Item <?php echo $i; ?>" class="img-responsive" />
@@ -79,11 +79,7 @@
 
 		<div class="container">
 
-			<pre>
-
-			</pre>
-
-			<ul class="gridder">
+			<ul class="gridder gridder-ajax">
 				<?php for ($i = 0; $i < 14; $i++): ?>
 					<li class="gridder-list" data-griddercontent="#gridder-content-<?php echo $i; ?>" data-id="<?php echo $i; ?>">
 						<img src="http://placehold.it/200x200&text=Item <?php echo $i; ?>" class="img-responsive" />
@@ -99,7 +95,7 @@
             jQuery(document).ready(function ($) {
 
                 // Call Gridder
-                $(".gridder").gridderExpander({
+                $(".gridder-static").gridderExpander({
                     scrollOffset: 60,
                     scrollTo: "panel", // "panel" or "listitem"
                     animationSpeed: 400,
@@ -108,6 +104,26 @@
 					nextText: "Next",
 					prevText: "Previous",
 					closeText: "Close",
+                    onStart: function () {
+                        console.log("Gridder Inititialized");
+                    },
+                    onExpanded: function (object) {
+                        console.log("Gridder Expanded");
+                        $(".carousel").carousel();
+                    }
+                });
+
+                // Call Gridder
+                $(".gridder-ajax").gridderExpander({
+                    scrollOffset: 60,
+                    scrollTo: "panel", // "panel" or "listitem"
+                    animationSpeed: 400,
+                    animationEasing: "easeInOutExpo",
+					showNav: true,
+					nextText: "Next",
+					prevText: "Previous",
+					closeText: "Close",
+					html5pushstate: true,
                     onStart: function () {
                         console.log("Gridder Inititialized");
                     },
