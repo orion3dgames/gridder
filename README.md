@@ -1,11 +1,11 @@
-# jQuery GRIDDER
+# jQuery GRIDDER 1.4.1
 
 ### A jQuery plugin that displays a thumbnail grid expanding preview similar to the effect seen on Google Images.
 
 We have all searched images on Google, so you probably noticed the interesting expanding preview when you click on a thumbnail. It’s a very nice effect and practical, allowing you quickly see more details without having to reload a new page. This plugin allows you to recreate a similar effect on a thumbnail grid. The idea is to open a preview when clicking on a thumbnail and to show a larger image and some other content like a title, a description and a link
 
-- Live BASIC demo GRIDDER v1.3.0 : http://www.oriongunning.com/demo/gridder/basic.php
-- Live ADVANCED demo GRIDDER v1.3.0 : http://www.oriongunning.com/demo/gridder
+- Live BASIC demo GRIDDER v1.4.0 : http://www.oriongunning.com/demo/gridder/basic.php
+- Live ADVANCED demo GRIDDER v1.4.0 : http://www.oriongunning.com/demo/gridder
 
 =======
 
@@ -16,6 +16,12 @@ Live demo GRIDDER v2 : http://www.oriongunning.com/demo/gridder-ajax/demo.php
  
 =======
 
+### NEW
+*24 June 2015
+You can now load content via ajax. Simply replace the #ID with an URL.
+
+=======
+
 ### FEATURES
 - Multiple instances
 - Really easy to use and customize
@@ -24,7 +30,7 @@ Live demo GRIDDER v2 : http://www.oriongunning.com/demo/gridder-ajax/demo.php
 - Callbacks (so you can launch other plugins)
 
 ### Coming soon ...
-- A new theme!
+- Hot Linking
 
 =======
 
@@ -48,6 +54,8 @@ Live demo GRIDDER v2 : http://www.oriongunning.com/demo/gridder-ajax/demo.php
     
     <!-- Gridder navigation -->
 	<ul class="gridder">
+
+         <!-- You can load specify which content is loaded by specifying the #ID of the div where the content is  -->
         <li class="gridder-list" data-griddercontent="#content1">
             <img src="http://placehold.it/600x400" />
         </li>
@@ -57,13 +65,18 @@ Live demo GRIDDER v2 : http://www.oriongunning.com/demo/gridder-ajax/demo.php
         <li class="gridder-list" data-griddercontent="#content3">
             <img src="http://placehold.it/600x400" />
         </li>
+
+        <!-- You can also load html/ajax pages by replacing the #ID with a URL -->
+        <li class="gridder-list" data-griddercontent="/content.html">
+            <img src="http://placehold.it/600x400" />
+        </li>
     </ul>
 
     <!-- Gridder content -->
     <div id="content1" class="gridder-content"> Content goes here... </div>
     <div id="content2" class="gridder-content"> Content goes here... </div>
     <div id="content3" class="gridder-content"> Content goes here... </div>
-    
+
 	```
 
 3. Call the plugin:
@@ -84,13 +97,13 @@ Live demo GRIDDER v2 : http://www.oriongunning.com/demo/gridder-ajax/demo.php
             prevText: "Previous",               // Previous button text
             closeText: "Close",                 // Close button text
             onStart: function(){
-                console.log("Gridder Inititialized");
+                //Gridder Inititialized
             },
             onContent: function(){
-                console.log("Gridder Content Loaded");
+                //Gridder Content Loaded
             },
             onClosed: function(){
-                console.log("Gridder Closed");
+                //Gridder Closed
             }
         });
 
