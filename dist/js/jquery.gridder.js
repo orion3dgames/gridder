@@ -6,29 +6,6 @@
  *  Made by Orion Gunning
  *  Under MIT License
  */
-// Avoid `console` errors in browsers that lack a console.
-(function() {
-    var method;
-    var noop = function () {};
-    var methods = [
-        "assert", "clear", "count", "debug", "dir", "dirxml", "error",
-        "exception", "group", "groupCollapsed", "groupEnd", "info", "log",
-        "markTimeline", "profile", "profileEnd", "table", "time", "timeEnd",
-        "timeStamp", "trace", "warn"
-    ];
-    var length = methods.length;
-    var console = (window.console = window.console || {});
-
-    while (length--) {
-        method = methods[length];
-
-        // Only stub undefined methods.
-        if (!console[method]) {
-            console[method] = noop;
-        }
-    }
-}());
-
 ;(function($) {
     
     /* CUSTOM EASING */
@@ -49,7 +26,7 @@
             
             // START CALLBACK
             settings.onStart(_this);
-            
+             
             // CLOSE FUNCTION
             function closeExpander(base) {
                 
@@ -105,18 +82,27 @@
                 
                 /* GET CONTENT VIA AJAX OR #ID*/
                 var thecontent = "";
-                if(settings.ajax){
+                
+                if( myself.data("griddercontent").indexOf("#") === 0 ) {
+                    
+                    // Load #ID Content
+                    thecontent = $(myself.data("griddercontent")).html();
+                    processContent(myself, thecontent);
+                }else{
+                    
+                    // Load AJAX Content
                     $.ajax({
                         type: "POST",
                         url: myself.data("griddercontent"),
                         success: function(data) {
                             thecontent = data;
                             processContent(myself, thecontent);
+                        },
+                        error: function (request) {
+                            thecontent = request.responseText;
+                            processContent(myself, thecontent);
                         }
                     });
-                }else{
-                    thecontent = $(myself.data("griddercontent")).html();
-                    processContent(myself, thecontent);
                 }
             }
             
@@ -217,18 +203,10 @@
         showNav: true,
         nextText: "Next",
         prevText: "Previous",
-        closeText: "Close",
-        ajax: false,     
-        onStart: function(){
-            console.log("Gridder Inititialized");
-        },
-        onContent: function(){
-            console.log("Gridder Content Loaded");
-        },
-        onClosed: function(){
-            console.log("Gridder Closed");
-        }
+        closeText: "Close",    
+        onStart: function(){},
+        onContent: function(){},
+        onClosed: function(){}
     };
-    
-    
+     
 })(jQuery);

@@ -20,9 +20,10 @@
 
 		<div class="container">
 
-			<ul class="gridder gridder-static">
+			<ul class="gridder">
 				<?php for ($i = 0; $i < 14; $i++): ?>
-					<li class="gridder-list" data-griddercontent="#gridder-content-<?php echo $i; ?>">
+					<?php $random = rand(0,1); ?>
+					<li class="gridder-list" data-griddercontent="<?php echo ($random === 0 ? 'content.html':'#gridder-content-'.$i); ?>">
 						<img src="http://placehold.it/200x200&text=Item <?php echo $i; ?>" class="img-responsive" />
 				<?php endfor; ?>
 			</ul>
@@ -73,31 +74,6 @@
 			<?php endfor; ?>
 		</div>
 
-		<div class="container">
-            <h1>Ajax example</h1>
-		</div>
-
-		<div class="container">
-
-			<ul class="gridder gridder-ajax">
-				<li class="gridder-list" data-griddercontent="http://api.oriongunning.com/wp/?p=52">
-					<img src="http://placehold.it/200x200" class="img-responsive" />
-				<li class="gridder-list" data-griddercontent="http://api.oriongunning.com/wp/?p=50">
-					<img src="http://placehold.it/200x200" class="img-responsive" />
-				<li class="gridder-list" data-griddercontent="http://api.oriongunning.com/wp/?p=48">
-					<img src="http://placehold.it/200x200" class="img-responsive" />
-				<li class="gridder-list" data-griddercontent="http://api.oriongunning.com/wp/?p=46">
-					<img src="http://placehold.it/200x200" class="img-responsive" />
-				<li class="gridder-list" data-griddercontent="http://api.oriongunning.com/wp/?p=44">
-					<img src="http://placehold.it/200x200" class="img-responsive" />
-				<li class="gridder-list" data-griddercontent="http://api.oriongunning.com/wp/?p=42">
-					<img src="http://placehold.it/200x200" class="img-responsive" />
-				<li class="gridder-list" data-griddercontent="http://api.oriongunning.com/wp/?p=40">
-					<img src="http://placehold.it/200x200" class="img-responsive" />
-			</ul>
-
-		</div>
-
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
         <script src="../src/jquery.gridder.js"></script>
@@ -105,49 +81,21 @@
             jQuery(document).ready(function ($) {
 
                 // Call Gridder
-                $(".gridder-static").gridderExpander({
+                $(".gridder").gridderExpander({
                     scroll: true,
 					scrollOffset: 30,
 					scrollTo: "panel", // panel or listitem
 					animationSpeed: 400,
 					animationEasing: "easeInOutExpo",
-					showNav: true,
+					showNav: false,
 					nextText: "Next",
 					prevText: "Previous",
 					closeText: "Close",
-					ajax: false,
-                    onStart: function () {
-                        console.log("Gridder Inititialized");
-                    },
                     onContent: function(){
-                        console.log("Gridder Expanded");
                         $(".carousel").carousel();
                     }
                 });
 
-                // Call Gridder
-                $(".gridder-ajax").gridderExpander({
-                    scroll: true,
-					scrollOffset: 30,
-					scrollTo: "panel", // panel or listitem
-					animationSpeed: 400,
-					animationEasing: "easeInOutExpo",
-					showNav: true,
-					nextText: "Next",
-					prevText: "Previous",
-					closeText: "Close",
-					ajax: true,
-					onStart: function(){
-						console.log("Gridder Inititialized");
-					},
-					onContent: function(){
-						console.log("Gridder Content Loaded");
-						$(".carousel").carousel();
-					},
-					onClosed: function(){
-						console.log("Gridder Closed");
-					}
-                });
             });
         </script>
     </body>
