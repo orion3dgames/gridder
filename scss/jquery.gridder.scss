@@ -8,16 +8,15 @@
     font-size:0;
 }
 
-.gridder-list, .gridder-show
-{
+.gridder-list, .gridder-show{
     font-size:16px;
 }
 
-.gridder-list { 
+.gridder-list{ 
     display: inline-block;
     vertical-align: top;
 }
-.gridder-show { 
+.gridder-show{ 
     display: block;
     float: left;
     width: 100%;
