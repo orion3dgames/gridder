@@ -1,6 +1,12 @@
 ;(function($) {
     
-    /* CUSTOM EASING */
+    //Ensures there will be no 'console is undefined' errors in IE
+    window.console = window.console || (function(){
+        var c = {}; c.log = c.warn = c.debug = c.info = c.error = c.time = c.dir = c.profile = c.clear = c.exception = c.trace = c.assert = function(){};
+        return c;
+    })();
+
+    /* Custom Easing */
     $.fn.extend($.easing,{
         def:"easeInOutExpo", easeInOutExpo:function(e,f,a,h,g){if(f===0){return a;}if(f===g){return a+h;}if((f/=g/2)<1){return h/2*Math.pow(2,10*(f-1))+a;}return h/2*(-Math.pow(2,-10*--f)+2)+a;}
     });    
