@@ -11,6 +11,27 @@
         def:"easeInOutExpo", easeInOutExpo:function(e,f,a,h,g){if(f===0){return a;}if(f===g){return a+h;}if((f/=g/2)<1){return h/2*Math.pow(2,10*(f-1))+a;}return h/2*(-Math.pow(2,-10*--f)+2)+a;}
     });    
     
+    /* KEYPRESS LEFT & RIGHT ARROW */
+    /* This will work only if a current gridder is opened. */
+    $(document).keydown(function(e) {
+        var keycode = e.keyCode;
+        var $current_gridder = $(".currentGridder");
+        var $current_target = $current_gridder.find(".gridder-show");
+        if($current_gridder.length){
+            if ( keycode === 37 ) {
+                console.log("Pressed Left Arrow");
+                $current_target.prev().prev().trigger("click");
+            }
+            if ( keycode === 39 ) {
+                console.log("Pressed Right Arrow");
+                $current_target.next().trigger("click");
+            }
+        }else{
+            console.log("No active gridder.");
+        }
+        e.preventDefault();
+    });
+    
     $.fn.gridderExpander = function(options) {
         
         /* GET DEFAULT OPTIONS OR USE THE ONE PASSED IN THE FUNCTION  */
@@ -48,10 +69,17 @@
                     base.find(".gridder-show").remove();
                     settings.onClosed(base);
                 });
+                
+                /* REMOVE CURRENT ACTIVE GRIDDER */
+                $(".currentGridder").removeClass("currentGridder");
             }
             
             // OPEN EXPANDER
             function openExpander(myself) {
+                
+                /* CURRENT ACTIVE GRIDDER */
+                $(".currentGridder").removeClass("currentGridder");
+                _this.addClass("currentGridder");
                 
                 /* ENSURES THE CORRECT BLOC IS ACTIVE */
                 if (!myself.hasClass("selectedItem")) {
@@ -187,7 +215,6 @@
                 e.preventDefault();
                 closeExpander(_this);
             });
-
         });
     };
     
