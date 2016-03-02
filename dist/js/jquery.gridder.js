@@ -29,15 +29,16 @@
             if ( keycode === 37 ) {
                 console.log("Pressed Left Arrow");
                 $current_target.prev().prev().trigger("click");
+                e.preventDefault();
             }
             if ( keycode === 39 ) {
                 console.log("Pressed Right Arrow");
                 $current_target.next().trigger("click");
+                e.preventDefault();
             }
         }else{
             console.log("No active gridder.");
-        }
-        e.preventDefault();
+        }   
     });
     
     $.fn.gridderExpander = function(options) {
