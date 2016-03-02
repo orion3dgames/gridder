@@ -1,1 +1,166 @@
-My Page
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+
+        <title>Gridder - Image Expander</title>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:600,300' rel='stylesheet' type='text/css' />
+        <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css' />
+
+        <link href='css/style.min.css' rel='stylesheet' type='text/css' />
+ 
+        <script>
+            /*
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-XXXXXXXXX-1', 'auto');
+            ga('send', 'pageview');
+            */
+        </script>
+
+    </head>
+    <body ng-app="gridderApp">
+        
+        <h1>GRIDDER</h1>
+        
+        <div class="block lightblue invert">
+            <div class="wrapper">
+                <h1>A jQuery plugin that displays a <strong>thumbnail grid expanding preview</strong> similar to the effect seen on Google Images.</h1>
+            </div>
+        </div>
+        
+        <div class="block">
+            
+            <h2>What does gridder.js do?</h2>
+            <p>We have all searched images on Google, so you probably noticed the interesting expanding preview when you click on a thumbnail. It's a very nice effect and practical, allowing you quickly see more details without having to reload a new page. This plugin allows you to recreate a similar effect on a thumbnail grid. The idea is to open a preview when clicking on a thumbnail and to show a larger image and some other content like a title, a description and a link</p>
+            
+            <div ng-controller="gridderExample1Controller">
+ 
+                <!-- Gridder navigation -->
+                <ul class="gridder clearfix">
+                    <li class="gridder-list" data-griddercontent="#content{{champion.id}}" ng-repeat="champion in champions.data">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{champion.name}}_0.jpg" alt="{{champion.name}}" />
+                    </li>
+                </ul>
+
+                <div id="content{{champion.id}}" class="gridder-content" ng-repeat="champion in champions.data">
+                    <div class="wrapper">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{champion.name}}_0.jpg" alt="{{champion.name}}" />
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+
+        <div class="block lightblue invert">
+            <div class="wrapper">
+                <h2>Usage - How-to</h2>
+
+                <p>
+                    First, you need to include jQuery: 
+                </p>
+
+                <div class="codeblock">
+                    <code>
+                        &lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"&gt;&lt;/script&gt;
+                    </code>
+                </div>
+
+                <p>Then include the gridder.js script just after jQuery:</p>
+
+                <div class="codeblock">
+                    <code>
+                        &lt;script src="dist/jquery.gridder.min.js"&gt;&lt;/script&gt;
+                    </code>
+                </div>
+
+                <p>After your page loads as usual, the injected JavaScript will parse your HTML markup and fill in content where and how you have specified using the data-dummytext attributes. <strong>Simple as that!</strong></p>
+                
+                <div class="codeblock">
+                    <pre>
+                       
+                    </pre>
+                </div>
+
+                <p>After your page loads as usual, the injected JavaScript will parse your HTML markup and fill in content where and how you have specified using the data-dummytext attributes. <strong>Simple as that!</strong></p>
+
+            </div>
+        </div>
+        
+        <div class="block">
+            <div class="wrapper">
+                <h2>Setting up the HTML</h2>
+
+                <p>
+                    First, you need to include jQuery: 
+                </p>
+
+                <div class="codeblock">
+                    <code>
+                        &lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"&gt;&lt;/script&gt;
+                    </code>
+                </div>
+
+                <p>Then include the gridder.js script just after jQuery:</p>
+
+                <div class="codeblock">
+                    <code>
+                        &lt;script src="dist/jquery.gridder.min.js"&gt;&lt;/script&gt;
+                    </code>
+                </div>
+
+                <p>After your page loads as usual, the injected JavaScript will parse your HTML markup and fill in content where and how you have specified using the data-dummytext attributes. <strong>Simple as that!</strong></p>
+
+            </div>
+        </div>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+        <script src="https://rawgithub.com/oriongunning/gridder/master/dist/js/jquery.gridder.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"></script> 
+        <script src="js/gridder-app.js"></script>
+
+        <script>
+            
+            $(function() {
+
+                // Call Gridder
+                $('.gridder').gridderExpander({
+                    scroll: true,
+                    scrollOffset: 30,
+                    scrollTo: "panel",                  // panel or listitem
+                    animationSpeed: 400,
+                    animationEasing: "easeInOutExpo",
+                    showNav: true,                      // Show Navigation
+                    nextText: "<span></span>",                   // Next button text
+                    prevText: "<span></span>",               // Previous button text
+                    closeText: "",                 // Close button text
+                    onStart: function(){
+                        //Gridder Inititialized
+                    },
+                    onContent: function(){
+                        //Gridder Content Loaded
+                    },
+                    onClosed: function(){
+                        //Gridder Closed
+                    }
+                });
+
+            });
+            
+        </script>
+
+    </body>
+</html>
