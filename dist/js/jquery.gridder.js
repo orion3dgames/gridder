@@ -1,5 +1,5 @@
 /*
- *  Gridder - v1.4.1
+ *  Gridder - v1.4.2
  *  A jQuery plugin that displays a thumbnail grid expanding preview similar to the effect seen on Google Images.
  *  http://www.oriongunning.com/
  *

@@ -1,4 +1,4 @@
-# jQuery GRIDDER 1.4.1
+# jQuery GRIDDER 1.4.2
 
 ### A jQuery plugin that displays a thumbnail grid expanding preview similar to the effect seen on Google Images.
 
