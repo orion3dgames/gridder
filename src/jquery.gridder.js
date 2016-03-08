@@ -193,7 +193,7 @@
             }
             
             /* CLICK EVENT */
-            _this.find(".gridder-list").on("click", function (e) {
+            _this.on("click", ".gridder-list", function (e) {
                 e.preventDefault();
                 var myself = $(this);
                 openExpander(myself);
