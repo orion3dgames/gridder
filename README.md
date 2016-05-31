@@ -1,5 +1,7 @@
 # jQuery GRIDDER 1.4.2
 
+<a href='https://ko-fi.com/A748382' target='_blank'><img height='32' style='border:0px;height:32px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=a' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a> 
+
 ### A jQuery plugin that displays a thumbnail grid expanding preview similar to the effect seen on Google Images.
 
 We have all searched images on Google, so you probably noticed the interesting expanding preview when you click on a thumbnail. It’s a very nice effect and practical, allowing you quickly see more details without having to reload a new page. This plugin allows you to recreate a similar effect on a thumbnail grid. The idea is to open a preview when clicking on a thumbnail and to show a larger image and some other content like a title, a description and a link
