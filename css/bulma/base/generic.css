@@ -1,0 +1,65 @@
+/*
+Error: Undefined variable: "$body-background".
+        on line 2 of sass/bulma/base/generic.sass
+
+1: html
+2:   background: $body-background
+3:   font-size: $size-normal
+4:   -moz-osx-font-smoothing: grayscale
+5:   -webkit-font-smoothing: antialiased
+6:   min-width: 300px
+7:   overflow-x: hidden
+
+Backtrace:
+sass/bulma/base/generic.sass:2
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/script/tree/variable.rb:49:in `_perform'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/script/tree/node.rb:50:in `perform'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:394:in `visit_prop'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/stack.rb:79:in `block in with_base'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/stack.rb:115:in `with_frame'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/stack.rb:79:in `with_base'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `block (2 levels) in visit_rule'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `map'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `block in visit_rule'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:428:in `visit_rule'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/stack.rb:79:in `block in with_base'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/stack.rb:115:in `with_frame'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/stack.rb:79:in `with_base'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:52:in `map'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:157:in `visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:8:in `visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/root_node.rb:36:in `css_tree'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/root_node.rb:20:in `render'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/engine.rb:278:in `render'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:209:in `each'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/plugin.rb:82:in `update_stylesheets'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/exec/sass_scss.rb:364:in `watch_or_update'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/exec/sass_scss.rb:51:in `process_result'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/exec/base.rb:52:in `parse'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/exec/base.rb:19:in `parse!'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/bin/sass:13:in `<top (required)>'
+D:/Programs/Ruby22-x64/bin/sass:23:in `load'
+D:/Programs/Ruby22-x64/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined variable: \"$body-background\".\A         on line 2 of sass/bulma/base/generic.sass\A \A 1: html\A 2:   background: $body-background\A 3:   font-size: $size-normal\A 4:   -moz-osx-font-smoothing: grayscale\A 5:   -webkit-font-smoothing: antialiased\A 6:   min-width: 300px\A 7:   overflow-x: hidden"; }

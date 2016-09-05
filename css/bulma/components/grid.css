@@ -1,0 +1,73 @@
+/*
+Error: Undefined mixin 'mobile'.
+        on line 25 of sass/bulma/components/grid.sass, in `mobile'
+        from line 25 of sass/bulma/components/grid.sass
+
+20:     .columns.is-mobile > &.is-#{$i}
+21:       flex: none
+22:       width: ($i / 12) * 100%
+23:     .columns.is-mobile > &.is-offset-#{$i}
+24:       margin-left: ($i / 12) * 100%
+25:   +mobile
+26:     &.is-half-mobile
+27:       flex: none
+28:       width: 50%
+29:     &.is-third-mobile
+30:       flex: none
+
+Backtrace:
+sass/bulma/components/grid.sass:25:in `mobile'
+sass/bulma/components/grid.sass:25
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:348:in `block in visit_mixin'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/stack.rb:98:in `block in with_mixin'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/stack.rb:115:in `with_frame'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/stack.rb:98:in `with_mixin'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:346:in `visit_mixin'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/stack.rb:79:in `block in with_base'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/stack.rb:115:in `with_frame'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/stack.rb:79:in `with_base'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `block (2 levels) in visit_rule'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `map'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `block in visit_rule'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:428:in `visit_rule'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/stack.rb:79:in `block in with_base'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/stack.rb:115:in `with_frame'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/stack.rb:79:in `with_base'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:52:in `map'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:157:in `visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:8:in `visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/root_node.rb:36:in `css_tree'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/root_node.rb:20:in `render'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/engine.rb:278:in `render'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:209:in `each'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/plugin.rb:82:in `update_stylesheets'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/exec/sass_scss.rb:364:in `watch_or_update'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/exec/sass_scss.rb:51:in `process_result'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/exec/base.rb:52:in `parse'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/exec/base.rb:19:in `parse!'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/bin/sass:13:in `<top (required)>'
+D:/Programs/Ruby22-x64/bin/sass:23:in `load'
+D:/Programs/Ruby22-x64/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined mixin 'mobile'.\A         on line 25 of sass/bulma/components/grid.sass, in `mobile'\A         from line 25 of sass/bulma/components/grid.sass\A \A 20:     .columns.is-mobile > &.is-#{$i}\A 21:       flex: none\A 22:       width: ($i / 12) * 100%\A 23:     .columns.is-mobile > &.is-offset-#{$i}\A 24:       margin-left: ($i / 12) * 100%\A 25:   +mobile\A 26:     &.is-half-mobile\A 27:       flex: none\A 28:       width: 50%\A 29:     &.is-third-mobile\A 30:       flex: none"; }

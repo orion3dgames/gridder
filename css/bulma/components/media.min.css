@@ -1,0 +1,1 @@
+body:before{white-space:pre;font-family:monospace;content:"Error: Undefined variable: \"$background\".\A         on line 2 of sass/bulma/components/media.sass\A \A 1: .media-number\A 2:   background: $background\A 3:   border-radius: 290486px\A 4:   display: inline-block\A 5:   font-size: $size-medium\A 6:   height: 32px\A 7:   line-height: 24px"}

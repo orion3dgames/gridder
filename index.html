@@ -10,156 +10,153 @@
         <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css' />
 
         <link href='css/style.min.css' rel='stylesheet' type='text/css' />
- 
+
         <script>
             /*
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r;
-                i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-                a = s.createElement(o),
-                        m = s.getElementsByTagName(o)[0];
-                a.async = 1;
-                a.src = g;
-                m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-            ga('create', 'UA-XXXXXXXXX-1', 'auto');
-            ga('send', 'pageview');
-            */
+             (function (i, s, o, g, r, a, m) {
+             i['GoogleAnalyticsObject'] = r;
+             i[r] = i[r] || function () {
+             (i[r].q = i[r].q || []).push(arguments)
+             }, i[r].l = 1 * new Date();
+             a = s.createElement(o),
+             m = s.getElementsByTagName(o)[0];
+             a.async = 1;
+             a.src = g;
+             m.parentNode.insertBefore(a, m)
+             })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+             
+             ga('create', 'UA-XXXXXXXXX-1', 'auto');
+             ga('send', 'pageview');
+             */
         </script>
 
     </head>
     <body ng-app="gridderApp">
-        
-        <h1>GRIDDER</h1>
-        
-        <div class="block lightblue invert">
-            <div class="wrapper">
-                <h1>A jQuery plugin that displays a <strong>thumbnail grid expanding preview</strong> similar to the effect seen on Google Images.</h1>
-            </div>
-        </div>
-        
-        <div class="block">
-            
-            <h2>What does gridder.js do?</h2>
-            <p>We have all searched images on Google, so you probably noticed the interesting expanding preview when you click on a thumbnail. It's a very nice effect and practical, allowing you quickly see more details without having to reload a new page. This plugin allows you to recreate a similar effect on a thumbnail grid. The idea is to open a preview when clicking on a thumbnail and to show a larger image and some other content like a title, a description and a link</p>
-            
-            <div ng-controller="gridderExample1Controller">
- 
-                <!-- Gridder navigation -->
-                <ul class="gridder clearfix">
-                    <li class="gridder-list" data-griddercontent="#content{{champion.id}}" ng-repeat="champion in champions.data">
-                        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{champion.name}}_0.jpg" alt="{{champion.name}}" />
-                    </li>
-                </ul>
 
-                <div id="content{{champion.id}}" class="gridder-content" ng-repeat="champion in champions.data">
-                    <div class="wrapper">
-                        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{champion.name}}_0.jpg" alt="{{champion.name}}" />
+        <div ng-controller="gridderExample1Controller">
+
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="container">
+                        <h1 class="title">
+                            jQuery Gridder
+                        </h1>
+                        <h2 class="subtitle">
+                             Lol Explorer Example <strong>ANGULAR</strong>
+                        </h2>
                     </div>
                 </div>
-                
+            </section>
+            
+            <hr>
+
+            <nav class="navbar">
+                <div class="navbar-left">
+                    <div class="navbar-item">
+                        <p class="title is-4">
+                            <strong>{{ filteredChampions.length }}</strong> champions
+                        </p>
+                    </div>
+                    <div class="navbar-item">
+                        <p class="control is-grouped">
+                            <input class="input" type="text" value="" placeholder="Enter your search term..." ng-model="filter.term" ng-change="updateLength()" />
+                            <button class="button">
+                                Search
+                            </button>
+                        </p>
+                    </div>
+                </div>
+                <div class="navbar-right">    
+                    <p class="navbar-item" ng-repeat="type in filter.type">
+                        <label>
+                        <input
+                            type="checkbox"
+                            name="filterType[]"
+                            value="{{type}}"
+                            ng-checked="filter.typeSelection.indexOf(type) > -1"
+                            ng-click="toggleSelection(type)"
+                          > {{type}}
+                        </label>
+                    </p>
+                    <div class="navbar-item">
+                        Sort:
+                    </div>
+                    <div class="navbar-item">
+                        <span class="select">
+                            <select ng-model="filter.date">
+                                <option value="DESC">Newest</option>
+                                <option value="ASC">Oldest</option>
+                            </select>
+                        </span>
+                    </div>
+                </div>
+            </nav>
+            
+            <hr>
+
+            <!-- Gridder navigation -->
+            <ul class="gridder clearfix">
+                <li class="gridder-list" data-griddercontent="#content{{champion.id}}" ng-repeat="champion in filteredChampions = ( champions | myFilterTerm:filter | myFilterTags:filter | orderBy: 'id':true ) ">
+                    <div class="image" style="background-image: url('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{champion.key}}_0.jpg');">
+                        <div class="overlay">
+                            <span class="title">{{champion.name}}</span><br>
+                            <span class="description">{{champion.title}}</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <div id="content{{champion.id}}" class="gridder-content" ng-repeat="champion in champions">
+                <div class="columns">
+                    <div class="column is-6">
+                        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{champion.key}}_0.jpg" alt="{{champion.name}}" />
+                    </div>
+                    <div class="column is-5 is-offset-1">
+                        <h2 class="title is-1">{{champion.name}}</h2>
+                        <h3 class="subtitle is-3">{{champion.title}}</h3>
+                        <p ng-bind-html="champion.lore | unsafe"></p>
+                    </div>
+                </div>
             </div>
 
-        </div>
-
-        <div class="block lightblue invert">
-            <div class="wrapper">
-                <h2>Usage - How-to</h2>
-
-                <p>
-                    First, you need to include jQuery: 
-                </p>
-
-                <div class="codeblock">
-                    <code>
-                        &lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"&gt;&lt;/script&gt;
-                    </code>
-                </div>
-
-                <p>Then include the gridder.js script just after jQuery:</p>
-
-                <div class="codeblock">
-                    <code>
-                        &lt;script src="dist/jquery.gridder.min.js"&gt;&lt;/script&gt;
-                    </code>
-                </div>
-
-                <p>After your page loads as usual, the injected JavaScript will parse your HTML markup and fill in content where and how you have specified using the data-dummytext attributes. <strong>Simple as that!</strong></p>
-                
-                <div class="codeblock">
-                    <pre>
-                       
-                    </pre>
-                </div>
-
-                <p>After your page loads as usual, the injected JavaScript will parse your HTML markup and fill in content where and how you have specified using the data-dummytext attributes. <strong>Simple as that!</strong></p>
-
-            </div>
-        </div>
-        
-        <div class="block">
-            <div class="wrapper">
-                <h2>Setting up the HTML</h2>
-
-                <p>
-                    First, you need to include jQuery: 
-                </p>
-
-                <div class="codeblock">
-                    <code>
-                        &lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"&gt;&lt;/script&gt;
-                    </code>
-                </div>
-
-                <p>Then include the gridder.js script just after jQuery:</p>
-
-                <div class="codeblock">
-                    <code>
-                        &lt;script src="dist/jquery.gridder.min.js"&gt;&lt;/script&gt;
-                    </code>
-                </div>
-
-                <p>After your page loads as usual, the injected JavaScript will parse your HTML markup and fill in content where and how you have specified using the data-dummytext attributes. <strong>Simple as that!</strong></p>
-
-            </div>
         </div>
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-        <script src="https://rawgithub.com/oriongunning/gridder/master/dist/js/jquery.gridder.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"></script> 
-        <script src="js/gridder-app.js"></script>
+
+        <script src="js/gridder.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/controllers/data.js"></script>  
+        <script src="js/controllers/mainController.js"></script>  
 
         <script>
-            
-            $(function() {
+
+            $(function () {
 
                 // Call Gridder
                 $('.gridder').gridderExpander({
                     scroll: true,
                     scrollOffset: 30,
-                    scrollTo: "panel",                  // panel or listitem
+                    scrollTo: "panel", // panel or listitem
                     animationSpeed: 400,
                     animationEasing: "easeInOutExpo",
-                    showNav: true,                      // Show Navigation
-                    nextText: "<span></span>",                   // Next button text
-                    prevText: "<span></span>",               // Previous button text
-                    closeText: "",                 // Close button text
-                    onStart: function(){
+                    showNav: true, // Show Navigation
+                    nextText: "<span></span>", // Next button text
+                    prevText: "<span></span>", // Previous button text
+                    closeText: "", // Close button text
+                    onStart: function () {
                         //Gridder Inititialized
                     },
-                    onContent: function(){
+                    onContent: function () {
                         //Gridder Content Loaded
                     },
-                    onClosed: function(){
+                    onClosed: function () {
                         //Gridder Closed
                     }
                 });
 
             });
-            
+
         </script>
 
     </body>

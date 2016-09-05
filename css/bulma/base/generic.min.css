@@ -1,0 +1,1 @@
+body:before{white-space:pre;font-family:monospace;content:"Error: Undefined variable: \"$body-background\".\A         on line 2 of sass/bulma/base/generic.sass\A \A 1: html\A 2:   background: $body-background\A 3:   font-size: $size-normal\A 4:   -moz-osx-font-smoothing: grayscale\A 5:   -webkit-font-smoothing: antialiased\A 6:   min-width: 300px\A 7:   overflow-x: hidden"}

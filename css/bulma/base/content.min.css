@@ -1,0 +1,1 @@
+body:before{white-space:pre;font-family:monospace;content:"Error: Undefined variable: \"$size-5\".\A         on line 4 of sass/bulma/base/content.sass\A \A 1: .content\A 2:   @extend .block\A 3:   &.is-medium\A 4:     font-size: $size-5\A 5:     code\A 6:       font-size: $size-6\A 7:   &.is-large\A 8:     font-size: $size-4\A 9:     code"}

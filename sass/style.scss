@@ -10,83 +10,33 @@ and open the template in the editor.
 
 @import 'mixins';
 @import 'gridder';
-
-// CUSTOM CSS
+@import 'bulma';
 
 body{
     height: 100%;
-    font-family: 'Open Sans',sans-serif;
-    font-weight: 100;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     line-height: 1.5em;
     font-size: 16px;
     background-color: #fff;
-    color: #333;
+    color: #222;
+    padding: 0.5%;
 }
 
-.block{
-    padding-top: 60px;
-    padding-bottom: 60px;
-    margin-bottom: 1px;
-    
-    &.block.blue {
-        background-color: #3267a0;
-    }
-    &.block.lightblue {
-        background-color: #5abbe6;
-    }
-
-    &.block.invert {
-        color: #fff;
-        text-shadow: rgba(0,0,0,.3) 0 1px 1px;
-        
-         a {
-            color: #fff;
-            text-decoration: none;
-        }
-        
+.gridder-expanded-content{
+    color: #FFF;
+    .title{
+        color: #FFF;
     }
 }
 
-.wrapper {
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
-h1{
-    margin-top: .5em;
-    margin-bottom: .5em;
-    text-shadow: rgba(0,0,0,.3) 0 1px 1px;
-    font-size: 60px;
-    line-height: 1.3em;
-    text-align: center;
-}
-
-h2 {
-    font-size: 36px;
-    margin-bottom: 1em;
-    line-height: 1em;
-}
-
-p{
-    margin-bottom: 1em;
-}
-
-strong {
-    font-weight: bold;
-}
-
-img{
+.seachForm{
+    width: 100%;
     display: block;
-}
-
-.codeblock {
-    padding: 10px;
-    border: 1px solid #ddd;
-    background-color: rgba(0,0,0,.05);
-    margin-bottom: 2em;
-    position: relative;
-    padding-right: 120px;
+    padding: 10px 0;
+    
+    input{
+        width: 100%;
+        padding: 10px;
+        display: block;
+    }
 }

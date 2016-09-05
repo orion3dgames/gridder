@@ -1,0 +1,73 @@
+/*
+Error: Undefined mixin 'clearfix'.
+        on line 15 of sass/bulma/base/helpers.sass, in `clearfix'
+        from line 15 of sass/bulma/base/helpers.sass
+
+10:   display: flex
+11: 
+12: // Float
+13: 
+14: .is-clearfix
+15:   +clearfix
+16: 
+17: .is-pulled-left
+18:   float: left
+19: 
+20: .is-pulled-right
+
+Backtrace:
+sass/bulma/base/helpers.sass:15:in `clearfix'
+sass/bulma/base/helpers.sass:15
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:348:in `block in visit_mixin'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/stack.rb:98:in `block in with_mixin'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/stack.rb:115:in `with_frame'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/stack.rb:98:in `with_mixin'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:346:in `visit_mixin'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/stack.rb:79:in `block in with_base'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/stack.rb:115:in `with_frame'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/stack.rb:79:in `with_base'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `block (2 levels) in visit_rule'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `map'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `block in visit_rule'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:428:in `visit_rule'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/stack.rb:79:in `block in with_base'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/stack.rb:115:in `with_frame'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/stack.rb:79:in `with_base'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:52:in `map'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:157:in `visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:8:in `visit'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/root_node.rb:36:in `css_tree'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/tree/root_node.rb:20:in `render'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/engine.rb:278:in `render'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:209:in `each'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/plugin.rb:82:in `update_stylesheets'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/exec/sass_scss.rb:364:in `watch_or_update'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/exec/sass_scss.rb:51:in `process_result'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/exec/base.rb:52:in `parse'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/lib/sass/exec/base.rb:19:in `parse!'
+D:/Programs/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.16/bin/sass:13:in `<top (required)>'
+D:/Programs/Ruby22-x64/bin/sass:23:in `load'
+D:/Programs/Ruby22-x64/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined mixin 'clearfix'.\A         on line 15 of sass/bulma/base/helpers.sass, in `clearfix'\A         from line 15 of sass/bulma/base/helpers.sass\A \A 10:   display: flex\A 11: \A 12: // Float\A 13: \A 14: .is-clearfix\A 15:   +clearfix\A 16: \A 17: .is-pulled-left\A 18:   float: left\A 19: \A 20: .is-pulled-right"; }
