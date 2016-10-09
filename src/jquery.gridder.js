@@ -139,6 +139,11 @@
                 /* FORMAT OUTPUT */
                 var htmlcontent = "<div class=\"gridder-padding\">";
 
+
+                htmlcontent += "<div class=\"gridder-expanded-content\">";
+                htmlcontent += thecontent;
+                htmlcontent += "</div>";
+
                 if(settings.showNav){
 
                     /* CHECK IF PREV AND NEXT BUTTON HAVE ITEMS */
@@ -156,9 +161,7 @@
                     htmlcontent += "<a href=\"#\" class=\"gridder-close\">"+settings.closeText+"</a>";
                 }
 
-                htmlcontent += "<div class=\"gridder-expanded-content\">";
-                htmlcontent += thecontent;
-                htmlcontent += "</div>";
+
                 htmlcontent += "</div>";
 
                 // IF EXPANDER IS ALREADY EXPANDED
