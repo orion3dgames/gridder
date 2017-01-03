@@ -6,6 +6,7 @@ and open the template in the editor.
 /*  Created on : 12/01/2016, 9:19:16 AM Author     : Oriongu
 */
 .jumbotron, body { background: #222; color: #ccc; }
+.jumbotron h2, body h2 { margin-top: 30px; }
 
 .gridder { margin: 0px; padding: 0px; list-style-type: none; font-size: 0; text-align: center; }
 .gridder .gridder-list { display: inline-block; vertical-align: top; cursor: pointer; position: relative; width: 400px; margin-bottom: 0.5%; margin-right: 0.5%; }
@@ -18,7 +19,7 @@ and open the template in the editor.
 .gridder.hasSelectedItem .gridder-list:not(.selectedItem) { opacity: .7; }
 
 .gridder-show { padding: 5%; background: #222; position: relative; display: block; float: left; width: 100%; margin-bottom: 0.5%; text-align: left; color: #CCC; }
-.gridder-show img { width: 100%; }
+.gridder-show img { width: 100%; box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2); }
 
 .gridder-content { display: none; }
 

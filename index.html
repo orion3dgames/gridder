@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:600,300' rel='stylesheet' type='text/css' />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
         
         <link href='css/style.css' rel='stylesheet' type='text/css' />
 
@@ -40,12 +41,77 @@
                     <h1 class="display-3">jQuery Gridder</h1>
                     <p class="lead">A jQuery plugin that displays a thumbnail grid expanding preview similar to the effect seen on Google Images.</p>
                     <p>Brought to you by <a href="http://www.oriongunning.com" target="_blank">www.oriongunning.com</a></p>
+
+                    <h2>Markup</h2>
+                    <pre>
+<code class="html">
+    &lt;!-- Gridder navigation --&gt;
+    &lt;ul class=&quot;gridder&quot;&gt;
+
+         &lt;!-- You can load specify which content is loaded by specifying the #ID of the div where the content is  --&gt;
+        &lt;li class=&quot;gridder-list&quot; data-griddercontent=&quot;#content1&quot;&gt;
+            &lt;img src=&quot;http://placehold.it/600x400&quot; /&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;gridder-list&quot; data-griddercontent=&quot;#content2&quot;&gt;
+            &lt;img src=&quot;http://placehold.it/600x400&quot; /&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;gridder-list&quot; data-griddercontent=&quot;#content3&quot;&gt;
+            &lt;img src=&quot;http://placehold.it/600x400&quot; /&gt;
+        &lt;/li&gt;
+
+        &lt;!-- You can also load html/ajax pages by replacing the #ID with a URL --&gt;
+        &lt;li class=&quot;gridder-list&quot; data-griddercontent=&quot;/content.html&quot;&gt;
+            &lt;img src=&quot;http://placehold.it/600x400&quot; /&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;!-- Gridder content --&gt;
+    &lt;div id=&quot;content1&quot; class=&quot;gridder-content&quot;&gt; Content goes here... &lt;/div&gt;
+    &lt;div id=&quot;content2&quot; class=&quot;gridder-content&quot;&gt; Content goes here... &lt;/div&gt;
+    &lt;div id=&quot;content3&quot; class=&quot;gridder-content&quot;&gt; Content goes here... &lt;/div&gt;
+    </code>
+                    </pre>
+                    
+                    <h2>Options Available</h2>
+                    <pre>
+<code class="js">
+    // Call Gridder
+    $('.gridder').gridderExpander({
+        scroll: true,
+        scrollOffset: 30,
+        scrollTo: "panel", // panel or listitem
+        animationSpeed: 400,
+        animationEasing: "easeInOutExpo",
+        showNav: true, // Show Navigation
+        nextText: "<span></span>", // Next button text
+        prevText: "<span></span>", // Previous button text
+        closeText: "", // Close button text
+        onStart: function () {
+            //Gridder Inititialized
+            console.log('On Gridder Initialized...');
+
+        },
+        onContent: function () {
+            //Gridder Content Loaded
+            console.log('On Gridder Expand...');
+
+        },
+        onClosed: function () {
+            //Gridder Closed
+            console.log('On Gridder Closed...');
+
+        }
+    });
+</code>
+
+                    </pre>
+
                 </div>
             </div>
 
             <!-- Gridder navigation -->
             <ul class="gridder clearfix">
-                <li class="gridder-list" data-griddercontent="#content{{champion.id}}" ng-repeat="champion in filteredChampions = ( champions | myFilterTerm:filter | myFilterTags:filter | orderBy: 'id':true ) ">
+                <li class="gridder-list" data-griddercontent="#content{{champion.id}}" ng-repeat="champion in filteredChampions = (champions| myFilterTerm:filter | myFilterTags:filter | orderBy: 'id':true ) ">
                     <div class="image" style="background-image: url('http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{champion.key}}_0.jpg');">
                         <div class="overlay">
                             <span class="title">{{champion.name}}</span><br>
@@ -69,11 +135,10 @@
             </div>
 
         </div>
-
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"></script> 
-
         <script src="https://rawgit.com/oriongunning/gridder/master/dist/js/jquery.gridder.js"></script>
         <script src="js/app.js"></script>
         <script src="js/controllers/data.js"></script>  
@@ -82,7 +147,9 @@
         <script>
 
             $(function () {
-
+                
+                hljs.initHighlightingOnLoad();
+                
                 // Call Gridder
                 $('.gridder').gridderExpander({
                     scroll: true,
@@ -97,17 +164,17 @@
                     onStart: function () {
                         //Gridder Inititialized
                         console.log('On Gridder Initialized...');
-                        
+
                     },
                     onContent: function () {
                         //Gridder Content Loaded
                         console.log('On Gridder Expand...');
-                        
+
                     },
                     onClosed: function () {
                         //Gridder Closed
                         console.log('On Gridder Closed...');
-                        
+
                     }
                 });
 
