@@ -1,3 +1,4 @@
+
 ;(function($) {
     
     //Ensures there will be no 'console is undefined' errors in IE
@@ -109,16 +110,30 @@
                 
                 /* GET CONTENT VIA AJAX OR #ID*/
                 var thecontent = "";
-                
-                if( myself.data("griddercontent").indexOf("#") === 0 ) {
-                    
+
+                if( myself.data("gridderlink") == 'direct' ) {
+
+                	document.location.href = myself.data("griddercontent");
+
+                } else if( myself.data("gridderlink") == 'none' ) {
+
+                	// nothing
+
+                } else if( myself.data("griddercontent").indexOf("#") === 0 ) {
+            
                     // Load #ID Content
                     thecontent = $(myself.data("griddercontent")).html();
                     processContent(myself, thecontent);
                 }else{
+
+                	var datas = false;
+					if ($.isFunction(settings.addDataToPost)) {
+						datas = settings.addDataToPost(myself);
+					}
                     
                     // Load AJAX Content
                     $.ajax({
+                    	data: datas,
                         type: "POST",
                         url: myself.data("griddercontent"),
                         success: function(data) {
@@ -230,6 +245,7 @@
         nextText: "Next",
         prevText: "Previous",
         closeText: "Close",    
+        addDataToPost: function(){},
         onStart: function(){},
         onContent: function(){},
         onClosed: function(){}
