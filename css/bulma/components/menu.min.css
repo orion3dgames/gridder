@@ -1,1 +1,0 @@
-body:before{white-space:pre;font-family:monospace;content:"Error: Undefined mixin 'fa'.\A         on line 2 of sass/bulma/components/menu.sass, in `fa'\A         from line 2 of sass/bulma/components/menu.sass\A \A 1: .menu-icon\A 2:   +fa(14px, 16px)\A 3:   color: $text-light\A 4:   float: left\A 5:   margin: 0 4px 0 -2px\A 6:   .fa\A 7:     font-size: inherit"}
