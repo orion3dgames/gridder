@@ -127,7 +127,7 @@
                     
                     // Load AJAX Content
                     $.ajax({
-                        type: "POST",
+                        type: "GET",
                         url: myself.data("griddercontent"),
                         success: function(data) {
                             thecontent = data;
