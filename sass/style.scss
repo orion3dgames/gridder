@@ -38,7 +38,7 @@ body{
         margin-right: 0.5%;
 
         .image {
-            background-color: #EEE;
+            background-color: #313131;
             background-size: cover;
             background-position: center;
             width: $size_w;
@@ -46,6 +46,7 @@ body{
             position: relative;
         }
     }
+    
     .overlay {
         position: absolute;
         left: 10%;
@@ -84,12 +85,12 @@ body{
     }
     
     &.hasSelectedItem .gridder-list:not(.selectedItem){
-        opacity: .7;  
+        opacity: .2;  
     }
 }
 
 .gridder-show {
-    padding: 5%;
+    padding: 4%;
     background: #222;
     position: relative;
     display: block;

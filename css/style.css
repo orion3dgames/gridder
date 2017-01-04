@@ -10,15 +10,15 @@ and open the template in the editor.
 
 .gridder { margin: 0px; padding: 0px; list-style-type: none; font-size: 0; text-align: center; }
 .gridder .gridder-list { display: inline-block; vertical-align: top; cursor: pointer; position: relative; width: 350px; margin-bottom: 0.5%; margin-right: 0.5%; }
-.gridder .gridder-list .image { background-color: #EEE; background-size: cover; background-position: center; width: 350px; height: 250px; position: relative; }
+.gridder .gridder-list .image { background-color: #313131; background-size: cover; background-position: center; width: 350px; height: 250px; position: relative; }
 .gridder .overlay { position: absolute; left: 10%; top: 10%; color: #FFF; line-height: 130%; text-align: left; }
 .gridder .overlay .title { font-weight: 800; font-size: 16px; color: #FFF; }
 .gridder .overlay .description { font-weight: 300; font-size: 14px; color: #FFF; }
 .gridder .gridder-list, .gridder .gridder-show { font-size: 12px; }
 .gridder .selectedItem:after { content: ' '; display: block; border-bottom: 10px solid #222; border-left: 10px solid transparent; border-right: 10px solid transparent; height: 0%; position: absolute; top: 101%; width: 0; left: 43%; margin-bottom: -4px; }
-.gridder.hasSelectedItem .gridder-list:not(.selectedItem) { opacity: .7; }
+.gridder.hasSelectedItem .gridder-list:not(.selectedItem) { opacity: .2; }
 
-.gridder-show { padding: 5%; background: #222; position: relative; display: block; float: left; width: 100%; margin-bottom: 0.5%; text-align: left; color: #CCC; }
+.gridder-show { padding: 4%; background: #222; position: relative; display: block; float: left; width: 100%; margin-bottom: 0.5%; text-align: left; color: #CCC; }
 .gridder-show img { width: 100%; box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2); }
 
 .gridder-content { display: none; }
