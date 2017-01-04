@@ -8,35 +8,177 @@ and open the template in the editor.
     Author     : Oriongu
 */
 
-@import 'mixins';
-@import 'gridder';
-@import 'bulma';
+$size_w: 400px;
+$size_h: 300px;
 
+.jumbotron,
 body{
-    height: 100%;
-    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    line-height: 1.5em;
-    font-size: 16px;
-    background-color: #fff;
-    color: #222;
-    padding: 0.5%;
-}
-
-.gridder-expanded-content{
-    color: #FFF;
-    .title{
-        color: #FFF;
-    }
-}
-
-.seachForm{
-    width: 100%;
-    display: block;
-    padding: 10px 0;
+    background: #222;
+    color: #ccc;
     
-    input{
-        width: 100%;
-        padding: 10px;
-        display: block;
+    h2{
+        margin-top: 30px;
     }
+}
+
+.gridder {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    font-size: 0;
+    text-align: center;
+    
+    .gridder-list {
+        display: inline-block;
+        vertical-align: top;
+        cursor: pointer;
+        position: relative;
+        width: $size_w;
+        margin-bottom: 0.5%;
+        margin-right: 0.5%;
+
+        .image {
+            background-color: #EEE;
+            background-size: cover;
+            background-position: center;
+            width: $size_w;
+            height: $size_h;
+            position: relative;
+        }
+    }
+    .overlay {
+        position: absolute;
+        left: 10%;
+        top: 10%;
+        color: #FFF;
+        line-height: 130%;
+        text-align: left;
+        .title {
+            font-weight: 800;
+            font-size: 16px;
+            color: #FFF;
+        }
+        .description {
+            font-weight: 300;
+            font-size: 14px;
+            color: #FFF;
+        }
+    }
+    
+    .gridder-list,
+    .gridder-show {
+        font-size: 12px;
+    }
+    .selectedItem:after {
+        content: ' ';
+        display: block;
+        border-bottom: 10px solid #222;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        height: 0%;
+        position: absolute;
+        top: 101%;
+        width: 0;
+        left: 43%;
+        margin-bottom: -4px;
+    }
+    
+    &.hasSelectedItem .gridder-list:not(.selectedItem){
+        opacity: .7;  
+    }
+}
+
+.gridder-show {
+    padding: 5%;
+    background: #222;
+    position: relative;
+    display: block;
+    float: left;
+    width: 100%;
+    margin-bottom: 0.5%;
+    text-align: left;
+    color: #CCC;
+
+    img{
+        width: 100%;
+        box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.gridder-content {
+  display: none;
+}
+
+.gridder-navigation .gridder-nav {
+  height: 77px;
+  padding: 0;
+  position: absolute;
+  width: 32px;
+  z-index: 1;
+  background-color: #454545;
+  background-image: linear-gradient(top, #3e3e3e, #333);
+  border: 1px solid #141414;
+  border-radius: 2px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06), 1px 1px 0 rgba(255, 255, 255, 0.03), -1px -1px 0 rgba(0, 0, 0, 0.02), inset 1px 1px 0 rgba(255, 255, 255, 0.05);
+  color: #aaa !important;
+  cursor: pointer !important;
+  display: inline-block;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#303030',EndColorStr='#262626');
+  font-size: 11px;
+  font-weight: bold;
+  margin: 0 5px;
+  outline: 0;
+  text-align: center;
+  text-decoration: none !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+  -webkit-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: normal;
+  word-wrap: normal;
+  top: 50%;
+  margin-top: -40px;
+  overflow: hidden;
+}
+.gridder-navigation .gridder-nav span {
+  display: block;
+  bottom: 0;
+  height: 23px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 14px;
+}
+.gridder-navigation .gridder-nav.prev {
+  left: -6px;
+}
+.gridder-navigation .gridder-nav.prev span {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAXBAMAAADJv2OxAAAAMFBMVEX///+ZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZnHHh8xAAAAD3RSTlMAESIzRFVmd4iZqrvM3e5GKvWZAAAAdElEQVQI12NgAAH2v2CKsf83mJb8vxBEMe3/KQCitf83gLn3n4Flff8FgCjW90/A3Pw/BiBK4v0lMHf+bwUw/R/CZVj/SwBq5kaIQD1UAfv7yxCBuH8OYJrl/VWIgM3/AjDNdP45REDq/0SI+9b/gghw/AUAn68l+4HFkZUAAAAASUVORK5CYII=) center no-repeat;
+}
+.gridder-navigation .gridder-nav.next {
+  right: -6px;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+.gridder-navigation .gridder-nav.next span {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAXBAMAAADJv2OxAAAAMFBMVEX///+ZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZnHHh8xAAAAD3RSTlMAESIzRFVmd4iZqrvM3e5GKvWZAAAAdElEQVQI12NgAAH2v2CKsf83mJb8vxBEMe3/KQCitf83gLn3n4Flff8FgCjW90/A3Pw/BiBK4v0lMHf+bwUw/R/CZVj/SwBq5kaIQD1UAfv7yxCBuH8OYJrl/VWIgM3/AjDNdP45REDq/0SI+9b/gghw/AUAn68l+4HFkZUAAAAASUVORK5CYII=) center no-repeat;
+}
+.gridder-navigation .gridder-nav:hover {
+  background: #3d3d3d;
+}
+.gridder-navigation .gridder-close {
+  background: url(data:image/gif;base64,R0lGODlhFAAUAJEAAE1NTf///////wAAACH5BAEHAAIALAAAAAAUABQAAAIzBISpK+YMm5Enpodw1HlCfnkKOIqU1VXk55goVb2hi7Y0q95lfG70uurNaqLgTviyyUoFADs=) no-repeat center center;
+  cursor: pointer;
+  height: 30px;
+  padding: 7px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 30px;
+  z-index: 2;
+}
+.gridder-navigation .gridder-close:hover {
+  color: #3d3d3d;
 }
