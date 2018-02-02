@@ -31,7 +31,7 @@ body{
 }
 
 .gridder-list{
-    @include rowMachine(6,1%);
+    @include rowMachine(2,1%);
 }
 
 /* */
@@ -63,5 +63,11 @@ body{
         &.selectedItem{
             opacity: 1;
         }
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .gridder-list{
+        @include rowMachine(6,1%);
     }
 }

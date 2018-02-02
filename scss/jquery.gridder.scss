@@ -27,5 +27,6 @@
 }
 
 .gridder-list{
-    @include rowMachine(6,1%);
+    @include rowMachine(2,1%);
 }
+
