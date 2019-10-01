@@ -175,7 +175,7 @@
                     mybloc.hide().append(htmlcontent).slideDown(settings.animationSpeed, settings.animationEasing, function () {
                         visible = true;
                         /* AFTER EXPAND CALLBACK */
-                        if ($.isFunction(settings.onContent)) {
+                        if (typeof(settings.onContent) === "function") {
                             settings.onContent(mybloc);
                         }
                     });
@@ -184,7 +184,7 @@
                     mybloc.find(".gridder-padding").fadeIn(settings.animationSpeed, settings.animationEasing, function () {
                         visible = true;
                         /* CHANGED CALLBACK */
-                        if ($.isFunction(settings.onContent)) {
+                        if (typeof(settings.onContent) === "function") {
                             settings.onContent(mybloc);
                         }
                     });
