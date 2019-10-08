@@ -1,18 +1,23 @@
 /*
- *  Gridder - v1.4.2
+ *  gridder - v1.4.2
  *  A jQuery plugin that displays a thumbnail grid expanding preview similar to the effect seen on Google Images.
  *  http://www.oriongunning.com/
  *
  *  Made by Orion Gunning
  *  Under MIT License
  */
-;(function($) {
-    
-    //Ensures there will be no 'console is undefined' errors in IE
-    window.console = window.console || (function(){
-        var c = {}; c.log = c.warn = c.debug = c.info = c.error = c.time = c.dir = c.profile = c.clear = c.exception = c.trace = c.assert = function(){};
-        return c;
-    })();
+(function(factory) {
+    if (typeof define === "function" && define.amd) {
+      // AMD. Register as an anonymous module depending on jQuery.
+      define(["jquery"], factory);
+    } else if (typeof exports === "object") {
+      // Node/CommonJS
+      module.exports = factory(require("jquery"));
+    } else {
+      // No AMD. Register plugin with global jQuery object.
+      factory(jQuery);
+    }
+  })(function($) {
 
     /* Custom Easing */
     $.fn.extend($.easing,{
@@ -170,7 +175,7 @@
                     mybloc.hide().append(htmlcontent).slideDown(settings.animationSpeed, settings.animationEasing, function () {
                         visible = true;
                         /* AFTER EXPAND CALLBACK */
-                        if ($.isFunction(settings.onContent)) {
+                        if (typeof(settings.onContent) === "function") {
                             settings.onContent(mybloc);
                         }
                     });
@@ -179,7 +184,7 @@
                     mybloc.find(".gridder-padding").fadeIn(settings.animationSpeed, settings.animationEasing, function () {
                         visible = true;
                         /* CHANGED CALLBACK */
-                        if ($.isFunction(settings.onContent)) {
+                        if (typeof(settings.onContent) === "function") {
                             settings.onContent(mybloc);
                         }
                     });
@@ -243,4 +248,4 @@
         onClosed: function(){}
     };
      
-})(jQuery);
+});
