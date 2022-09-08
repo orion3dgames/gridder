@@ -1,4 +1,4 @@
-> **WARNING**: this version has been deprecated and a new fully JS version is being developed here: https://github.com/oriongunning/gridder-js
+> **WARNING**: ⚠⚠ this version has been deprecated and a new fully JS version is being developed here: https://github.com/oriongunning/gridder-js ⚠⚠
 
 ***
 
