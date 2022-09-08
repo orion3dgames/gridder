@@ -1,5 +1,7 @@
 > **WARNING**: this version has been deprecated and a new fully JS version is being developed here: https://github.com/oriongunning/gridder-js
 
+***
+
 # jQuery GRIDDER 1.4.2 <a href='https://ko-fi.com/A748382' target='_blank'><img height='32' style='border:0px;height:32px;float: right;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=a' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a> [![unheap](https://img.shields.io/badge/Featured%20on-Unheap-orange.svg)](https://www.unheap.com/media/galleries/gridder/) [![CDNJS version](https://img.shields.io/cdnjs/v/gridder.svg)](https://cdnjs.com/libraries/gridder)
 
 <img width="480" height="305" src='https://i.giphy.com/xT8qBaPahUIhtN9HwI.gif' border='0' alt='Gridder Example' />
