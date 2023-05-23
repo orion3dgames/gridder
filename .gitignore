@@ -3,3 +3,4 @@ nbproject/
 node_modules
 .sass-cache/
 npm-debug.log
+.parcel-cache/

@@ -1,6 +1,6 @@
 {
   "name": "gridder",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "description": "A jQuery plugin that displays a thumbnail grid expanding preview similar to the effect seen on Google Images.",
   "keywords": [
     "jquery",
@@ -9,6 +9,23 @@
     "expanding",
     "grid"
   ],
+  "source": [
+    "src/jquery.gridder.js",
+    "src/scss/jquery.gridder.scss"
+  ],
+  "targets": {
+    "css": {
+      "source": "src/scss/jquery.gridder.scss"
+    },
+    "js": {
+      "source": "src/jquery.gridder.js"
+    }
+  },
+  "main": "dist/js/jquery.gridder.js",
+  "scripts": {
+    "watch": "parcel watch",
+    "build": "parcel build"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/oriongunning/gridder.git"
@@ -24,16 +41,10 @@
   "homepage": "http://www.oriongunning.com/",
   "license": "MIT",
   "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-cli": "~0.1.13",
-    "grunt-contrib-coffee": "^0.12.0",
-    "grunt-contrib-concat": "^0.5.1",
-    "grunt-contrib-jshint": "^0.11.0",
-    "grunt-contrib-sass": "^0.9.2",
-    "grunt-contrib-uglify": "^0.8.0",
-    "grunt-contrib-watch": "^0.6.1"
+    "@parcel/transformer-sass": "2.8.3",
+    "parcel": "^2.8.3"
   },
-  "scripts": {
-    "test": "grunt travis --verbose"
+  "dependencies": {
+    "jquery": "^3.7.0"
   }
 }
