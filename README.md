@@ -1,4 +1,4 @@
-> **WARNING**: ⚠⚠ this version has been deprecated and a new fully JS version is being developed here: https://github.com/oriongunning/gridder-js ⚠⚠
+> **WARNING**: ⚠⚠ this version has been deprecated and a new fully JS version is being developed here: https://github.com/orion3dgames/gridder-js ⚠⚠
 
 ***
 
@@ -19,7 +19,7 @@ We have all searched images on Google, so you probably noticed the interesting e
 ## Alternative version of Gridder that support html 5 pushstate (REQUIRES SERVER KNOWLEDGE)
 
 Live demo GRIDDER v2 : https://www.oriongunning.com/demo/gridder-ajax/demo.php
-- Github link for V2 : https://github.com/oriongunning/gridder-ajax
+- Github link for V2 : https://github.com/orion3dgames/gridder-ajax
  
 =======
 
