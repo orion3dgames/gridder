@@ -11,14 +11,12 @@
 
 We have all searched images on Google, so you probably noticed the interesting expanding preview when you click on a thumbnail. It’s a very nice effect and practical, allowing you quickly see more details without having to reload a new page. This plugin allows you to recreate a similar effect on a thumbnail grid. The idea is to open a preview when clicking on a thumbnail and to show a larger image and some other content like a title, a description and a link
 
-- Demo GRIDDER v1.4.0 : https://oriongunning.github.io/gridder/
-- Alternative Demo : httsp://www.oriongunning.com/demo/gridder
+- Demo GRIDDER: http://orion3dgames.github.io/gridder/
 
 =======
 
 ## Alternative version of Gridder that support html 5 pushstate (REQUIRES SERVER KNOWLEDGE)
 
-Live demo GRIDDER v2 : https://www.oriongunning.com/demo/gridder-ajax/demo.php
 - Github link for V2 : https://github.com/orion3dgames/gridder-ajax
  
 =======
